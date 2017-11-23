@@ -1,8 +1,50 @@
-\documentclass{article}
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{csquotes}
+\usepackage{todonotes}
+\usepackage{verbatim}
+\usepackage{amssymb}
 
-\usepackage{graphicx}
-\usepackage{epigraph}
-\title{Caffeine Induced Homotopies}
+\usepackage{tikz}
+\usepackage{tikz,fullpage}
+\usetikzlibrary{arrows,%
+                petri,%
+                topaths}%
+\usepackage{tkz-berge}
+\usepackage[position=top]{subfig}
+
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{example}[thm]{Example}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+
+\newtheorem{corollary}{Corollary}[theorem]
+
+%%%
+%%% The following, if uncommented, numbers equations within sections.
+%%% 
+
+\numberwithin{equation}{section}
+
+
+\title{Markov Chains}
 \author{Joseph Tobin}
 \date{17 November 2017}
 
@@ -12,9 +54,107 @@
 
 %include abstract
 
+%5.17 - end
+%presentation the week after break
+%email rough draft over beak
+%lookup and use jordan canonical form without proof
+
 
 \section{Introduction}
-\epigraph{A topologist is someone who cannot tell the difference between a coffee cup and a donut}{\textit{Unknown}}
+
+\begin{lemma}
+hello world
+
+\end{lemma}
+
+\begin{theorem}[Theorem 5.18 pg. 298]
+Let $A \in M_{n \lambda n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
+Then $\lambda = \rho(A)$ and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \in C^n$ is the column vector in which each coordinate equals $1$.
+
+\end{theorem}
+
+\begin{proof}
+First, note that because $A$ has all postitive values and $u$ has all positive values, then $Au$ has all postive values. Therefore, because $\lambda u = Au$ has all positive values we can conclude $\lambda > 0$ and $\lambda = |\lambda| = \rho(A)$
+
+\todo{how do we know 1 is an eigenvalue of A? we don't know that it's a transition matrix?}
+
+Now let $v$ be an eigenvector of $A$ corresponding to $\lambda$ with coordinates $v_1, v_2, \ldots, v_n$.  
+Then let $v_k = max(|v_1|, |v_2|, \ldots |v_n|)$ and $b = |v_k|$.
+
+Then $$ |\lambda| b = |\lambda| |v_k| = |\lambda v_k| $$
+But if $\lambda$ is an eigenvalue of $A$, then $Av = \lambda v$ and thus $\forall 1 \leq i \leq n \lambda v_i = \sum_{j = 1}^n A_{ij}v_j$.
+Thus
+
+$$ |\lambda v_k| = | \sum_{j = 1}^n A_{kj}v_j | $$
+
+By the triangle inequality and then multiplication rules,
+
+$$ | \sum_{j = 1}^n A_{kj}v_j | \leq \sum_{j=1}^n |A_{kj}v_j| = \sum_{j=1}^n |A_{kj}| |v_j| $$
+
+Since we know $b = |v_k| \geq v_i \forall 1 \leq i \leq n$ and similarly $\rho(A) \geq  \rho_i(A) \forall 1 \leq i \leq n $, we know 
+
+$$ \sum_{j=1}^n |A_{kj}| |v_j|  \leq \sum_{j=1}^n |A_{kj}| b = b \sum_{j=1}^n |A_{kj}| =  b\rho_k(A) = \rho_k(A)b \leq \rho(A)b $$
+
+
+But since we know $|\lambda| = \rho(A)$, we know the three inequalities above are actually equalities.
+
+\begin{enumerate}
+
+	\item $| \sum_{j = 1}^n A_{kj}v_j | = \sum_{j=1}^n |A_{kj}v_j|$
+
+	\item $\sum_{j=1}^n |A_{kj}| |v_j|  = \sum_{j=1}^n |A_{kj}| b$
+
+	\item $\rho_k(A)b = \rho(A)b$
+
+\end{enumerate}
+
+
+But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
+
+
+
+\end{proof}
+
+\begin{corollary}[Corollary 1 pg. 299]
+
+	Let $A \in M_{n \times n}(C)$ be a matrix in which each entry is positiive and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
+	Then  $\lambda = \nu(A)$ and $E_{\lambda}$ has dimension 1.
+
+\end{corollary}
+
+\begin{proof}
+
+	Consider $A^T$.  
+	We know by execercise 14 of 5.1 in \cite{friedberg2003linear} that $A$ and $A^T$ have the same eigenvalues.
+	Let $E_{\lambda}, E_{\lambda}\textprime$ be the eigenspaces of $\lambda$ corresponding to $A, A^T$ respectively.
+	Additionally, if $|\lambda| = \nu(A)$, then the row \todo{define nu, rho, clarify} corresponding to $\nu(A)$ is now a column in $A^T$ such that $|\lambda| = \rho(A^T)$.
+	Thus $A^T$ is a matrix in which each entry is positive with an eigenvalue $\lambda = \rho(A^T)$.
+	Thus by Theorem 5.18 \cite{friedberg2003linear}, the basis of $E_{\lambda}\textprime = \{ u \}$, where $u \in C^n$ is the column vector in which each coordinate contains $1$ and $\lambda = \rho(A^T)$.
+	Thus $dim(E_{\lambda}\textprime) = 1$.
+	But by exercise $13$ of $5.2$ of \cite{friedberg2003linear}, we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$ and $\nu(A) = \rho(A^T) = \lambda$.
+	Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
+
+\end{proof}
+
+
+
+\begin{corollary}[Corollary 2 pg. 299]
+
+	Let $A \in M_{n \times n}(C)$ be a transition matrix in which each entry is positiive and let $\lambda$ be an eigenvalue of $A$ such that $\lambda \neq 1$.
+	Then  $|lambda| < 1$ and the eigenspace corresonding to the eigenvalue $1$ has dimension $1$.
+
+\end{corollary}
+
+\begin{proof}
+	Exercise
+
+\end{proof}
+
+\section{Theorem 5.19}
+
+\section{Theorem 5.20}
+
+
 
 
 
