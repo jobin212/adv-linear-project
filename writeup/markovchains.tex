@@ -188,7 +188,26 @@ Then $E_{\lambda} \subseteq E_{\lambda}\textprime$ \todo{whyy?} and because $dim
 
 \end{proof}
 
+
+\begin{corollary}[Corollary Pg. 300]
+Let $A$ be a regular transition matrix that is diagonalizble.
+Then $\lim_{m \to \infty} A^m$ exists.
+
+\end{corollary}
+
+\begin{proof}
+
+We know by Theorem 5.14 \cite{friedberg2003linear} that if $A \in M_{n \times n}(C)$ is diagonalizable and has every eigenvalue contained in $S$, where $S = \{ \lambda \in C: |\lambda| < 1$ or $|\lambda| = 1\}$, then $\lim_{m \to \infty} A^m$ exists.
+
+
+Thus because $A$ is dianolizable by assumption, we just need to show for all eigenvalues $\lambda$ of $A$, $\lambda \in S$.
+But we know by Theorem 5.19 $\forall$ eigenvalues $\lambda$ that $\lambda = 1$ or $|\lambda| < 1$ and thus $\lambda \in S$.
+Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
+
+\end{proof}
+
 \section{Theorem 5.20}
+
 
 
 
