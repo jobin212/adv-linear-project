@@ -141,12 +141,22 @@ But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
 \begin{corollary}[Corollary 2 pg. 299]
 
 	Let $A \in M_{n \times n}(C)$ be a transition matrix in which each entry is positiive and let $\lambda$ be an eigenvalue of $A$ such that $\lambda \neq 1$.
-	Then  $|lambda| < 1$ and the eigenspace corresonding to the eigenvalue $1$ has dimension $1$.
+	Then  $|\lambda| < 1$ and the eigenspace corresonding to the eigenvalue $1$ has dimension $1$.
 
 \end{corollary}
 
 \begin{proof}
-	Exercise
+	We know by corollary 3 of Theorem 5.16 \cite{friedberg2003linear} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
+
+	If $A$ is a transition matrix, then by Theorem 5.17 \cite{friedberg2003linear} we know that $1$ is an eigenvalue. 
+
+	We also know that if $A$ is a transition matrix, then given $u$ as a column vector in which each coordinate equals 1, then $A^Tu = u$.
+	But since $u$ is the column vector equal to $1$, each $u_i$ in $u$ is equal to the sum along the columns of $A^T$.
+	But because $u_i = 1 \forall i$, then $\nu_i(A) = 1 \forall i$ and thus $\nu(A) = 1$.
+
+	Thus we have an all-positive-entry matrix with $1 = \lambda = \nu(A) $ and thus by Corollary 1 of Theorem 5.18 \todo{fancy citing}, we know $dim(E_{\lambda}) = 1$.
+
 
 \end{proof}
 

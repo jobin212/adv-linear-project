@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 NOV 2017 20:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 NOV 2017 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,10 +991,10 @@ Package caption Info: End \AtBeginDocument code.
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./markovchains.bbl) [2] (./markovchains.aux) ) 
 Here is how much of TeX's memory you used:
- 17140 strings out of 493014
- 325606 string characters out of 6133351
- 395984 words of memory out of 5000000
- 20190 multiletter control sequences out of 15000+600000
+ 17148 strings out of 493014
+ 325791 string characters out of 6133351
+ 396127 words of memory out of 5000000
+ 20198 multiletter control sequences out of 15000+600000
  9746 words of font info for 38 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,9n,96p,823b,861s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1012,7 +1012,7 @@ e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on markovchains.pdf (2 pages, 143344 bytes).
+Output written on markovchains.pdf (2 pages, 144670 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
