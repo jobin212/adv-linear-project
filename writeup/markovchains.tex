@@ -160,7 +160,33 @@ But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
 
 \end{proof}
 
-\section{Theorem 5.19}
+\begin{theorem}[Theorem 5.19 pg. 298]
+Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then 
+
+\begin{enumerate}
+	\item $|\lambda| \leq 1$
+	\item If $|\lambda| = 1$, then $\lambda = 1$ and $dim(E_{\lambda}) = 1$.
+
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+
+We know $(1)$ was proved in Corollary 3 of Theorem 5.16 \cite{friedberg2003linear}.
+
+Since $A$ is regular, we know by definition $\exists s > 0 \in \mathbb{Z}$ such that $A^s$ has only positive entries
+Because $A$ is a transition matrix and the entries of $A^s$ are positive, we know the entries of $A^{s+1} = A^s(A)$ are positive \todo{note that we're just summing over the coluymns of A which have sum one}
+Suupose $|\lambda| = 1$, then we know by by Probelem $15b$ of section $5.1$ in \cite{friedberg2003linear} that if $\lambda$ is a eigenvalue of $A$, then $\lambda^s$, $\lambda^{s+1}$ are eigenvalues of $A$, $A^{s+1}$ respectively with $ |\lambda^s |= |\lambda^{s+1} |= |\lambda| = 1$.
+
+Because each entry of $A^s$, $A^{s+1}$ is positive, we know that for any eigenvalues $\lambda*$ of $A^s$, $A^{s+1}$ such that $\lambda* \neq 1$, then $|\lambda| < 1$.
+Thus because $|\lambda^s |= |\lambda^{s+1} |= 1 $, we can conclude $\lambda^s = \lambda^{s+1} = 1$ and therefore $\lambda = 1$.
+
+Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
+Then $E_{\lambda} \subseteq E_{\lambda}\textprime$ \todo{whyy?} and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
+
+
+\end{proof}
 
 \section{Theorem 5.20}
 
