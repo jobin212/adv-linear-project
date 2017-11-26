@@ -44,9 +44,9 @@
 \numberwithin{equation}{section}
 
 
-\title{Markov Chains}
+\title{Regular Transition Matrices}
 \author{Joseph Tobin}
-\date{17 November 2017}
+\date{27 November 2017}
 
 \begin{document}
 
@@ -62,10 +62,9 @@
 
 \section{Introduction}
 
-\begin{lemma}
-hello world
 
-\end{lemma}
+
+\section{Theorems}
 
 \begin{theorem}[Theorem 5.18 pg. 298]
 Let $A \in M_{n \lambda n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
@@ -206,14 +205,95 @@ Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
 
 \end{proof}
 
-\section{Theorem 5.20}
+\begin{theorem}[Theorem 5.20]
+
+Let $A$ be an $n \times n$ regular transition matrix. Then:
+
+\begin{enumerate}
+
+	\item The multiplicity of $1$ as an eigenvalue of $A$ is $1$.
+
+	\item $\lim_{m \to \infty} A^m$ exists.
+
+	\item $L = \lim_{m \to \infty} A^m$ is a transition matrix.
+
+	\item $LA = AL = L$.
+
+	\item The columns of $L$ are identical and equal to the unique probability vector $v$ that is equal to the eigenvalue $1$.
+
+	\item For any probability vector $w$, $\lim_{m \to \infty} A^m w = v$.
+
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+
+\begin{enumerate}
+
+	\item See exercise 20 of section 7.2
+
+	\item 	1, 5.13, 5.19
+
+	\item 
+			By theorem 5.15 \cite{friedberg2003linear}, we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$
+			Due to the equivalence, we can  know $L$ is a transition matrix is  $u^tL = u^t$.
+			But 
+			$$u^tL = u^t \lim_{m \to \infty} A^m = \lim_{m \to \infty} u^t A^m$$
+
+			But $A^m$ is a transition matrix which means $\forall m u^t A^m = u^t$ and thus
+			$$\lim_{m \to \infty} u^t A^m = \lim_{m \to \infty} u^t = u^t $$
+
+			Thus $L$ is a transition matrix.
 
 
+	\item 
+
+			By Theorem 5.12 \cite{friedberg2003linear}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
+
+			But $\lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^{m} = L$.
+
+			Thus $LA = AL = L$.
 
 
+	\item 
+			We know $AL = L$ by $(4)$.
+			Let $L_i$ be the $ith$ column vector of $L$.
+			Then because $AL = L$, we know $AL_i = L_i \forall 1 \leq i \leq n$.
+			Thus $L_i$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda = 1$.
+
+			Additionally, because $L$ is a transition matrix by $(3)$, we know $L^tu = u$ and thus $\forall 1 \leq i \leq n L_i^t u = u$.
+			Thus $\forall 1 \leq i \leq n L_i$ is a probability vector.
+
+			But then using $(1)$, we know that the multiplicity of $1$ as an eigenvalue of $A$ is 1.
+			Thus all the columns of $L$ have to be a scalar multiple of the same vector.
+			But because every column is a probability vector, they have to be the same in order to satisify $\forall 1 \leq i \leq n L_i^t u = u$. \todo{need to prove?}
+
+			Thus each column of $L$ is equal to the the unique probability vector $v$ corresponding to eigenvalue $1$.
+
+	\item 
+		Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
+		We want to show $y = v$.
+		,
+		If $y = Lw$, then by the corollary to Theorem 5.15 \cite{friedberg2003linear}, we know $y$ is a probability vector.
+
+		Additionally,
+		$$Ay = A(Lw) = (AL)w = Lw$$
+		by part $(4)$.
+		But $Lw = y$ and thus $Ay = y$.
+
+		Therefore $y$ is an probability vector and eigenvector of $A$ corresponding to $\lambda = 1$
+		But $v$ is the unique probability vector and eigenvector of $A$ corresponding to $\lambda = 1$ and thus $y = v$.
+
+		Thus $\lim_{m \to \infty} A^m w = v$.
 
 
-\section{Explanation of Film}
+\end{enumerate}
+
+
+\end{proof}
+
+\section{Applications}
 
 \bibliographystyle{alpha}
 \bibliography{MathCitations} 
