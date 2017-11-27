@@ -52,6 +52,8 @@
 
 \maketitle
 
+%not sure why E_labda subset of prime
+
 %include abstract
 
 %5.17 - end
@@ -150,11 +152,16 @@ But this only holds if $x = cy$ for some nonnegative $c$.
 \end{proof}
 
 \begin{remark}
-Then $\forall n \in \mathbb{N}$, consider $||sum_{i=1}^n x_i||$.
-Then by the previous lemma, $$||\sum_{i = 1}^n x_i|| = ||\sum_{i = 1}^{n-1} x_i| + ||x_n||$$.
-Then we can repeat to get $$ ||\sum_{i = 1}^n x_i|| = ||\sum_{i = 1}^{n-1} x_i|| + ||x_n|| = ||\sum_{i = 1}^{n-2} x_i|| + ||x_{n-1}|| + ||x_n|| $$
-And so on until $$||\sum_{i = 1}^n x_i|| = \sum_{i = 1}^{n} ||x_i||$$
+Then $\forall n \in \mathbb{N}$, consider $||\sum_{i=1}^n x_i||$.
+Then by the previous lemma $x_n = c_n* \sum_{i = 1}^{n-1} x_i$ if and only if
 
+$$||\sum_{i = 1}^n x_i|| = ||\sum_{i = 1}^{n-1} x_i|| + ||x_n||$$.
+
+Then we can repeat to get $||x_{n-1}|| = c_{n-1}  * \sum_{i = 1}^{n-2} x_i$ if and only if $$ ||\sum_{i = 1}^{n-1} x_i|| =  ||\sum_{i = 1}^{n-2} x_i|| + ||x_{n-1}||  $$
+
+And so on until we get $x_2 =\ c_2x_1 , x_3 =\ c_3x_1 \ldots x_n =\ c_nx_1\ $ if and only if  $$||\sum_{i = 1}^n x_i|| = \sum_{i = 1}^{n} ||x_i||$$ 
+
+for non-negative scalars $c_1, c_2, \ldots c_n$.
 
 \end{remark}
 
@@ -207,6 +214,34 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 
 But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
 
+By the first lemma, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of some nonzero complex number $z$.
+Without loss of generality, assume $|z| = 1$.
+Then $\exists c_1, c_2, \ldots c_n$ such that $A_{kj}v_j = c_j z$.
+
+By $(2)$ above, we know $\forall  1 \leq j \leq n\ , |v_j| = b$ and therefore
+
+$$b = |v_j| = |\frac{c_jz}{A_{kj}}| = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
+
+Since $A_{kj}v_j = c_j z$, this gives us $v_j = bz\ \forall j$ and thus 
+
+
+\begin{equation}
+    v = \begin{bmatrix}
+           v_{1} \\
+           v_{2} \\
+           \vdots \\
+           v_{n}
+         \end{bmatrix}
+     	= \begin{bmatrix}
+           bz \\
+           bz \\
+           \vdots \\
+           bz
+         \end{bmatrix}
+        = bzu 
+\end{equation}
+
+Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a scalar multiple of $u$ and thus $\{ u \}$ is a basis for $E_{\lambda}$.
 
 
 \end{proof}
@@ -299,7 +334,7 @@ We now split this proof into parts:
 	\item 
 
 		Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
-		Then $E_{\lambda} \subseteq E_{\lambda}\textprime$ \todo{whyy?} and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
+		Then $E_{\lambda} \subseteq E_{\lambda}\textprime$ and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
 \end{enumerate}
 
 \end{proof}
