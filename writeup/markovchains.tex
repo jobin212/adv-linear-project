@@ -61,6 +61,76 @@
 
 
 \section{Introduction}
+In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
+We will start off with basic definitions and then dive into theories, all of which are shown with sufficient proofs.
+Then, we will will deduce the relevant theorems and develop a whole swath of properties for square regular transition matrices.
+Finally, we will explore applications of these theorems.
+
+
+We rely heavily on results shown in previous parts of section 5.3 in addition to results shown section in 5.1 and 5.2 of \cite{friedberg2003linear}.
+Additionally, previous knowledge of Jordan Canonical Form is assumed.
+
+\section{Basic Definitions and Notes}
+
+\begin{definition}[Matrix Limit]
+Let $L$, $A_1$, $A_2$, $\ldots$, be $n \times p$ matrices having complex entries.
+The sequence $A_1, A_2, \ldots$ is said to \textbf{converge} to the $n \times p$ matrix $L$, called the \textbf{limit} of the sequence, if $\forall 1 \leq i \leq n$ and $\forall 1 \leq j \leq p$
+
+$$lim_{m \to \infty}(A_m)_{ij} = L_{ij}.$$
+
+In this case, we write $$ lim_{m \to \infty}(A_m) = L.$$
+
+
+\end{definition}
+
+
+\begin{definition}[Transition Matrix, Probability Vector]
+We call an $n \times n$ $M$ a \textbf{transition matrix} if it contains only nonnegative entries and all of its columns sum to $1$.
+We call a column vector $P$ a \textbf{probability vector} if it contains only nonnegative entries that sum to $1$.
+
+
+\begin{comment}
+ an and let $v$ be any column vector in $\mathbb{R}^n$ having nonnegative coordinates.
+Let $u \in \mathbb{R}^n$ be the column vector with each coordinate equal to $1$.
+
+Then we say $M$ is a \textbf{transition matrix} if $M^tu = u.
+Additionally, $v$ is a probability vector if $u^tv = (1)$.
+
+We call an $M$ be any $n \times n$ matrix with real, nonnegative entries an and let $v$ be any column vector in $\mathbb{R}^n$ having nonnegative coordinates.
+Let $u \in \mathbb{R}^n$ be the column vector with each coordinate equal to $1$.
+
+Then we say $M$ is a \textbf{transition matrix} if $M^tu = u.
+Additionally, $v$ is a probability vector if $u^tv = (1)$.
+
+
+\end{comment}
+
+\end{definition}
+
+\begin{definition}[Regular]
+A transition matrix $M$ is called regular if there exists an $s \in \mathbb{N}_{>0}$ such that $M^s$ has only positive entries.
+
+\end{definition}
+
+\begin{definition}[Row Sum, Column Sum]
+Let $A \in M_{n \times n }(C)$.
+
+$\forall 1 \leq i, j \leq n$, define $\rho_i(A)$ to be the sum of the absolute values of the entries of row $i$ of $A$ or 
+
+$$ \rho_i(A) = \sum_{j=1}^n|A_{ij}| $$
+
+and define $\nu_j(A)$ to be the sum of the absolute values of the entries of column $j$ of $A$ or 
+
+$$ \nu_j(A) = \sum_{j=1}^n|A_{ij}| $$
+
+Then the \textbf{row sum} of A or $\rho(A)$ and the \textbf{column sum} or $\nu(A)$ are defined as:
+
+$$ \rho(A) = max\{\rho_i(A) \forall 1 \leq i \leq n \} $$
+$$ \nu(A) = max\{\nu_j(A) \forall 1 \leq j \leq n \} $$
+
+
+\end{definition}
+
 
 
 

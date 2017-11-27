@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 NOV 2017 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 NOV 2017 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,18 +989,22 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 
-LaTeX Warning: Marginpar on page 2 moved.
+LaTeX Warning: Marginpar on page 3 moved.
 
-[2] (./markovchains.bbl) [3] (./markovchains.aux) ) 
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+[3] (./markovchains.bbl) [4] (./markovchains.aux) ) 
 Here is how much of TeX's memory you used:
  17172 strings out of 493014
- 326346 string characters out of 6133351
- 400586 words of memory out of 5000000
+ 326345 string characters out of 6133351
+ 404592 words of memory out of 5000000
  20222 multiletter control sequences out of 15000+600000
  9746 words of font info for 38 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 62i,9n,96p,823b,927s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,9n,96p,823b,926s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texm
@@ -1016,10 +1020,10 @@ pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on markovchains.pdf (3 pages, 155391 bytes).
+Output written on markovchains.pdf (4 pages, 165628 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
