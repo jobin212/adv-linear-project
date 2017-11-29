@@ -217,7 +217,7 @@ For any positive integer $m$, we have the following:
 \begin{lemma}[Section 6 Exercise 15(b)]
 Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
 
-If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$ (where $c_1 = 1$).
 
 \end{lemma}
 
@@ -227,7 +227,21 @@ We will proof by induction.
 
 Base Case: $n = 2$
 Suppose $|x_1 + x_2| = |x_1| + |x_2|$.
-Then
+
+If $x_1$ or $x_2$ equals $0$, then the property above is trivially satifised.
+
+
+Otherwise we can consider $x_1, x_2, x_1 + x_2$ as vectors in the complex plane that form a triangle with $|x_1|, |x_2|, |x_1 + x_2| $ as the lengths of the sides of this triangle.
+But then by the cosine rule $|x_1 + x_2|^2 = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$, where $\Theta$ is the angle between $-x_1$ and $x_2$.
+Thus $(|x_1| + |x_2|)^2 = |x_1|^2 + |x_2|^2 + 2|x_1||x_2| = x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$
+which implies $1 = -cos\Theta$ or $\Theta = \pi$
+
+But if the angle between $-x_1$ and $x_2$ is $\pi$  then the angle between $x_1$ and $x_2$ is $0$.
+Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \geq 0$.
+
+
+
+
 
 
 Inductive step:
