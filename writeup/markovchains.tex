@@ -52,16 +52,11 @@
 
 \maketitle
 
-%not sure why E_labda subset of prime
-%\todo{need to prove?} part 5
-%applications
 
 %include abstract
 
 %5.17 - end
-%presentation the week after break
-%email rough draft over beak
-%lookup and use jordan canonical form without proof
+\todo{check for cases where |lambda| = 1  but not -1, 1}
 
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
@@ -255,20 +250,18 @@ for non-negative scalars $c_1, c_2, \ldots c_n$.
 
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
-Let $A \in M_{n \lambda n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
+Let $A \in M_{n \times n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
 Then $\lambda = \rho(A)$ and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \in C^n$ is the column vector in which each coordinate equals $1$.
 
 \end{theorem}
 
 \begin{proof}
-First, note that because $A$ has all positive values and $u$ has all positive values, then $Au$ has all positive values. Therefore, because $\lambda u = Au$, $\lambda u$ has all positive values.
-Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\lambda = |\lambda| = \rho(A)$
 
-Now we want to show that $\{ u \}$ is a basis for $E_{\lambda}$.
-To show this, we are going to fact that $|\lambda| = p(A)$ to derive several equalities giving us information about $A$.
+First we want to show that $\{ u \}$ is a basis for $E_{\lambda}$.
+To show this, we are going to use the fact that $|\lambda| = \rho(A)$ to derive several equalities giving us information about $A$.
 
 First, let $v$ be an eigenvector of $A$ corresponding to $\lambda$ with coordinates $v_1, v_2, \ldots, v_n$.  
-Then let $v_k = max(\ |v_1|, |v_2|, \ldots |v_n|\ )$ and $b = |v_k|$.
+Now choose $k$ such that $v_k$ is the coordinate of $v$ with the largest absolute value and let $b = |v_k|$.
 
 Then $$ |\lambda|\ b =\ |\lambda|\ |v_k| = |\lambda v_k| $$
 
@@ -298,6 +291,7 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 
 \end{enumerate}
 
+\todo{handle page split}
 
 
 But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
@@ -305,10 +299,15 @@ But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
 By the first lemma, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of some nonzero complex number $z$.
 Without loss of generality, assume $|z| = 1$.
 Then $\exists c_1, c_2, \ldots c_n$ such that $A_{kj}v_j = c_j z$.
+Since $A_{kj} > 0$, we can say $v_j = \frac{c_jz}{A_{kj}}$.
 
 By $(2)$ above, we know $\forall  1 \leq j \leq n\ , |v_j| = b$ and therefore
 
-$$b = |v_j| = |\frac{c_jz}{A_{kj}}| = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
+$$b = |v_j| = |\frac{c_jz}{A_{kj}}|$$
+
+But $A_{kj} > 0$ by assumption and $c_j$ is nonnegative.  Thus
+
+$$ |\frac{c_jz}{A_{kj}}| = |\frac{c_j}{A_{kj}}||z| = |\frac{c_j}{A_{kj}}|*1 = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
 
 Since $A_{kj}v_j = c_j z$, this gives us $v_j = bz\ \forall j$ and thus 
 
@@ -329,7 +328,11 @@ Since $A_{kj}v_j = c_j z$, this gives us $v_j = bz\ \forall j$ and thus
         = bzu 
 \end{equation}
 
-Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a scalar multiple of $u$ and thus $\{ u \}$ is a basis for $E_{\lambda}$.
+Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a scalar multiple of $u$ and thus $\{ u \}$ is a basis for $E_{\lambda}$ and an eigenvector of $A$.
+
+
+Now note that because $A$ has all positive values and $u$ has all positive values, then $Au$ has all positive values. Therefore, because  $\lambda u = Au$, $\lambda u$ has all positive values.
+Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\lambda = |\lambda| = \rho(A)$
 
 
 \end{proof}
@@ -347,7 +350,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 	We know by lemma \ref{exercise5114} in \cite{friedberg2003linear} that $A$ and $A^t$ have the same eigenvalues.
 	Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
 
-	Now notice that because the rows of $A$ are the columns of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
+	Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
 
 
 	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
@@ -368,12 +371,13 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 \end{corollary}
 
 \begin{proof}
-	We know by corollary 3 of Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+	\todo{lambda = -i?}
+	We know by Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
 	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
 	Suppose $|\lambda| = 1$.
-	We know that the sum of each column of $A$ is 1 and thus $\nu(A) = 1$ and thus $|\lambda| = \nu(A)$.
-	But this means by the corollary \ref{cor5181} that $\lambda = \nu(A) = 1 \neq -1$.
-	Thus $\lambda \neq 1$ implies $|\lambda| < 1$.
+	We know by definition of a transition matrix that the sum of each column of $A$ is 1 or in other words $\nu(A) = 1$ and thus $|\lambda| = \nu(A) = 1$.
+	But this means by corollary \ref{cor5181} that $\lambda = \nu(A) = 1$.
+	By contraposition $\lambda \neq 1$ implies $|\lambda| \neq  1$ and thus $\lambda \neq 1$ implies $|\lambda| <  1$ .
 
 	If $A$ is a transition matrix, then by Theorem \ref{theorem517} we know that $1$ is an eigenvalue. 
 	We also know that if $A$ is a transition matrix, then given $u$ as a column vector in which each coordinate equals 1, then $A^tu = u$.
@@ -621,6 +625,8 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 The vector $v$ in Theorem \ref{theorem520}(5) is called the \textbf{fixed probability vector} or \textbf{stationary vector} of the regular transition matrix $A$.
 
 \end{definition}
+
+\todo{example persia}
 
 \bibliographystyle{alpha}
 \bibliography{MathCitations} 
