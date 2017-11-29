@@ -181,6 +181,40 @@ Every transition matrix has $1$ as an eigenvalue.
 
 \end{theorem}
 
+\begin{lemma}[Exercise 5.1.14 \cite{friedberg2003linear}]\label{exercise5114}
+Let $A \in M_{n \times n}(F)$.
+
+Then $A, A^t$ have the same characteristic polynomial and hence the same eigenvalues.
+\end{lemma}
+
+\begin{lemma}[Exercise 5.2.13 \cite{friedberg2003linear}]\label{exercise5213}
+Let $A \in M_{n \times n}(F)$.
+Then for any eigenvalue $\lambda$ of $A, A^t$, let $E_{\lambda}, E_{\lambda}\textprime$ denote the corresponding eigenvalues for $A, A^t$ respectively.
+
+
+Then for any $\lambda$, $dim(E_{\lambda})\ =\  dim(E_{\lambda}\textprime)$.
+
+\end{lemma}
+
+\begin{lemma}[Exercise 5.1.15b \cite{friedberg2003linear}]\label{exercise5115}
+Let $A \in M_{n \times n}(F)$.
+Let $x$ be an eigenvector of $A$ corresponding to the eigenvalue $\lambda$.
+For any positive integer $m$, we have the following:
+
+\begin{enumerate}
+	\item 
+		$x$ is an eigenvector of $A^m$ corresponding to the eigenvalue $\lambda^m$
+
+	\item 
+		Let $E_{\lambda}$ denote the eigenspace of $A$ corresponding to eigenvalue $\lambda$ and $E_{\lambda}\textprime$ the eigenspace of $A^m$ corresponding to $\lambda$.
+		Since $x$ is an eigenvector of $A$ corresponding to the eigenvalue $\lambda$ implies then $x$ is an eigenvector of $A^m$ corresponding to $\lambda^m$, we can conclude $x \in E_{\lambda}$ implies $x \in E_{\lambda}\textprime$.
+		Thus $E_{\lambda} \subseteq E_{\lambda}\textprime$.
+
+\end{enumerate}
+
+\end{lemma}
+
+
 
 \section{Theorems}
 
@@ -300,7 +334,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 
 \end{proof}
 
-\begin{corollary}[Corollary 1 pg. 299 \cite{friedberg2003linear} ]
+\begin{corollary}[Corollary 1 pg. 299 \cite{friedberg2003linear} ]\label{cor5181}
 
 	Let $A \in M_{n \times n}(C)$ be a matrix in which each entry is positiive and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
 	Then  $\lambda = \nu(A)$ and $E_{\lambda}$ has dimension 1. \newline
@@ -310,23 +344,23 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 \begin{proof}
 
 	Consider $A^t$ and let $E_{\lambda},\ E_{\lambda}\textprime$ be the eigenspaces of $\lambda$ corresponding to $A,\ A^t$ respectively.
-	We know by exercise 14 of section 5.1 in \cite{friedberg2003linear} that $A$ and $A^t$ have the same eigenvalues.
+	We know by lemma \ref{exercise5114} in \cite{friedberg2003linear} that $A$ and $A^t$ have the same eigenvalues.
 	Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
-	
+
 	Now notice that because the rows of $A$ are the columns of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
 
 
-	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$, where $u \in C^n$ is the column vector in which each coordinate contains $1$ and $\lambda = \rho(A^t) = \nu(A)$.
+	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
 	
 	Thus $dim(E_{\lambda}\textprime) = 1$.
-	But by exercise $13$ of $5.2$ of \cite{friedberg2003linear}, we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
+	But by lemma \ref{exercise5213} of \cite{friedberg2003linear}, we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
 	Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
 
 \end{proof}
 
 
 
-\begin{corollary}[Corollary 2 pg. 299 \cite{friedberg2003linear}]
+\begin{corollary}[Corollary 2 pg. 299 \cite{friedberg2003linear}]\label{cor5182}
 
 	Let $A \in M_{n \times n}(C)$ be a transition matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $\lambda \neq 1$.
 	Then  $|\lambda| < 1$ and the eigenspace corresponding to the eigenvalue $1$ has dimension $1$.
@@ -338,7 +372,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
 	Suppose $|\lambda| = 1$.
 	We know that the sum of each column of $A$ is 1 and thus $\nu(A) = 1$ and thus $|\lambda| = \nu(A)$.
-	But this means by the previous corollary that $\lambda = \nu(A) = 1 \neq -1$.
+	But this means by the corollary \ref{cor5181} that $\lambda = \nu(A) = 1 \neq -1$.
 	Thus $\lambda \neq 1$ implies $|\lambda| < 1$.
 
 	If $A$ is a transition matrix, then by Theorem \ref{theorem517} we know that $1$ is an eigenvalue. 
@@ -352,6 +386,11 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 
 
 \end{proof}
+
+\begin{lemma}
+
+PLACEHOLDER
+\end{lemma}
 
 \begin{theorem}[Theorem 5.19 pg. 298]\label{theorem519}
 Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then 
@@ -380,21 +419,21 @@ We now split this proof into parts:
 		and thus because for any given $i, j$, $\forall\ 1 \leq k \leq n\ A_{kj} \geq 0$ and $A^s_{ik} > 0$ and $\exists\ k$ such that $A_{kj}  > 0$ (since the column sums to $1$), we can conclude $A^{s+1}_{ij} > 0$.
 
 	\item 
-		Suppose $|\lambda| = 1$, then we know by by problem $15b$ of section $5.1$ in \cite{friedberg2003linear} that if $\lambda$ is a eigenvalue of $A$, then $\lambda^s$, $\lambda^{s+1}$ are eigenvalues of $A^s$, $A^{s+1}$ respectively.  Because $|\lambda| = 1$, we know $ |\lambda^s |= |\lambda^{s+1} |= |\lambda| = 1$.
+		Suppose $|\lambda| = 1$, then we know by lemma \ref{exercise5115} that if $\lambda$ is a eigenvalue of $A$, then $\lambda^s$, $\lambda^{s+1}$ are eigenvalues of $A^s$, $A^{s+1}$ respectively.  Because $|\lambda| = 1$, we know $ |\lambda^s |= |\lambda^{s+1} |= |\lambda| = 1$.
 
 	\item
-		Because each entry of $A^s$, $A^{s+1}$ is positive and both matrices are transition matrices, we know that for any eigenvalues $\lambda*$ of $A^s$, $A^{s+1}$ such that $\lambda* \neq 1$, then $|\lambda| < 1$.
+		Because each entry of $A^s$, $A^{s+1}$ is positive and both matrices are transition matrices, we know by corollary \ref{cor5182} that for any eigenvalues $\lambda*$ of $A^s$, $A^{s+1}$ such that $\lambda* \neq 1$, then $|\lambda| < 1$.
 		Thus because $|\lambda^s |= |\lambda^{s+1} |= 1 $, we can conclude $\lambda^s = \lambda^{s+1} = 1$ and therefore $\lambda = 1$.
 	\item 
 
 		Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
-		Then $E_{\lambda} \subseteq E_{\lambda}\textprime$ and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
+		Then by lemma \ref{exercise5115} $E_{\lambda} \subseteq E_{\lambda}\textprime$ and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
 \end{enumerate}
 
 \end{proof}
 
 
-\begin{corollary}[Corollary Pg. 300]
+\begin{corollary}[Corollary Pg. 300]\label{cor519}
 Let $A$ be a regular transition matrix that is diagonalizable.
 Then $\lim_{m \to \infty} A^m$ exists.
 
