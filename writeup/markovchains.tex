@@ -58,6 +58,7 @@
 %5.17 - end
 
 \todo{figure out R and C}
+\todo{type up jcf proof}
 
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
@@ -214,7 +215,6 @@ For any positive integer $m$, we have the following:
 
 \section{Theorems}
 
-\todo{redo theorem!!}
 
 \begin{lemma}[Section 6 Exercise 15(b)]
 Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
@@ -527,6 +527,7 @@ The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}
 	Then we have the following:
 
 	\begin{enumerate}
+		\item $||AB|| \leq n||A||||B||$
 		\item $||A^m|| \leq 1$ for every positive integer $m$.
 		\item $\exists c > 0$ such that $||J^m|| \leq c$ for every positive integer $m$.
 		\item Each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
@@ -542,11 +543,21 @@ The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}
 
 \begin{enumerate}
 	\item 
-		If $A$ is a transition matrix, then every columns to $1$ and every $A_{ij} \geq 0$.
-		Thus $\forall\ i, j\ 0 \leq A_{ij} < \leq $ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$
+		If $A$ is a transition matrix, then every column sums to $1$ and every $A_{ij} \geq 0$.
+		Thus $\forall\ i, j\ 0 \leq A_{ij} \leq 1$ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$
 
 	\item
-		If $J = P^{-1}AP$, then 
+		If $J = P^{-1}AP$, then $J^m  = P^{-1}A^mP$ and $||J^m|| = || P^{-1}A^mP ||$
+		\todo{fix citations for prev numbers}
+		By (1) we have that $|| P^{-1}A^mP || \leq n||P^{-1}||||A^mP|| \leq n^2 ||P^{-1}|| ||A^m||| |P||$.
+		But we know by (2) that $||A^m|| \leq 1$.
+		Thus 
+		$$ |J^m|| \leq || P^{-1}A^mP || \leq n^2 ||P^{-1}|| ||A^m||| |P|| \leq n^2 ||P^{-1}|| |P||$$
+
+		But since $P, P^{-1}$ are fixed, $||P||, ||P^{-1}||$ are constant and thus we have a constant $c = n^2 ||P^{-1}|| |P||$ such that $||J^m|| \leq c\ \forall m \in \mathbb{Z}_{>0}$
+
+		
+
 
 	\item 
 		By way of contradiction, suppose there exists a  Jordan block of $J$ corresponding to $\lambda = 1$ is not a $1 \times 1 $ matrix.
