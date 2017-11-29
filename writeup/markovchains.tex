@@ -57,8 +57,6 @@
 
 %5.17 - end
 
-\todo{figure out R and C}
-\todo{type up jcf proof}
 
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
@@ -487,7 +485,6 @@ Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
 
 
 The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}.
-\todo{define double bars?}
 
 \begin{definition}
 For any $A \in M_{n \times n}(\mathbb{C})$, define the norm of $A$ by
@@ -542,7 +539,6 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 	\item
 		If $J = P^{-1}AP$, then $J^m  = P^{-1}A^mP$ and $||J^m|| = || P^{-1}A^mP ||$
-		\todo{fix citations for prev numbers}
 		By lemma \ref{exercise7220} we have that $|| P^{-1}A^mP || \leq n||P^{-1}||||A^mP|| \leq n^2 ||P^{-1}|| ||A^m||| |P||$.
 		But we know by (1) that $||A^m|| \leq 1$.
 		Thus 
@@ -593,7 +589,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 \begin{enumerate} 
 
-	\item The multiplicity of $1$ as an eigenvalue of $A$ is $1$.
+	%\item The multiplicity of $1$ as an eigenvalue of $A$ is $1$.
 
 	\item $\lim_{m \to \infty} A^m$ exists.
 
@@ -614,6 +610,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 \begin{enumerate}
 
+	\begin{comment}
 	\item
 			We know that $A$ has eigenvalue $1$ by Theorem \ref{theorem517} and the characteristic polynomial of $A$ splits because $C$ is an algebraically closed field. Additionally, by Theorem 7.4 \cite{friedberg2003linear}, we know $\forall\ 1 \leq i \leq k$, $dim(K_{1})$ is the multiplicity of $1$ as an eigenvalue of $A$.  
 
@@ -625,12 +622,40 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 
 			By the previous lemma and Theorem \ref{theorem519}, we know the multiplicity of $1$ as eigenvalue of $A$ is 1.
-
+	\end{comment}
 
 	\item 
+	\begin{comment}
 			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
 			Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
 			Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
+	\end{comment}
+		Since $A$ is a matrix in $\mathbb{C}$, we know the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$.
+		
+		
+		Then by \todo{ben's theorem}, we know $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
+		Consider $\lambda_i\ \forall\ 1 \leq i \leq r $, we know by \ref{theorem519} that either $|\lambda_i| < 1$ or $\lambda_i = 1$.
+		Thus
+
+		$$lim_{m \to \infty}J^m = lim_{m \to \infty}(\oplus_{i=1}^rJ_{n_i}(\lambda_i))^m = \oplus_{i=1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
+
+		$$ = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus\ \oplus_{i=1 |\lambda| < 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
+
+		%$$lim_{m \to \infty}((\oplus_{i=1, \lambda_i = 1}^rJ_{n_i}(1))^m \oplus  \oplus_{i=1, |\lambda_i| < 1}^r(J_{n_i}(\lambda_i))^m $$
+
+		But by lemma \ref{exericse7221}, we know the size of the blocks corresponding to $\lambda = 1$ have size $1 \times 1$.
+		Thus $\forall i$ such that $\lambda_i =1$, we know $n_i = 1$ and moreover $J_1(1) = 1$.
+		Thus $lim_{m \to \infty}(J_{1}(1))^m = lim_{m \to \infty} (1)^m = 1 $ and thus $\oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m $ converges.
+
+
+		Additionally, for $|\lambda_i| < 1$, $J_{n_i}(\lambda_i)$ is an upper triangular matrix with values $|\lambda_i| < 1$ along the diagonal.
+		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to 0.
+
+		Thus
+		$$lim_{m \to \infty}J^m = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus \oplus_{i=1 |\lambda| < 1}^r0_{n_i} = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
+
+		And thus $lim_{m \to \infty}J^m$ exists and thus $lim_{m \to \infty}A^m$ exists.
+			
 
 	\item 
 			By Theorem \ref{theorem515} , we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
@@ -850,7 +875,6 @@ Q
 
 which is as expected.
 
-\todo{example persia}
 
 \bibliographystyle{alpha}
 \bibliography{MathCitations} 
