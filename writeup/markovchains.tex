@@ -519,6 +519,24 @@ Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
 
 
 The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}.
+\todo{define double bars?}
+
+\begin{lemma}[Exercise 20 of Section 7.2]
+Let $A, B \in M_{n \times n}(\mathbb{C})$.
+Then $||AB|| \leq n ||A|| ||B||$.
+
+\end{lemma}
+
+
+\begin{proof}
+	By definition $||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \}$.
+	Next, we know that $|(AB)_{ij}|  = |\sum_{k = 1}^nA_{ik}B_{kj}|$ and 
+	$\forall\ i, j, k\ A_{ik} \leq ||A||,  B_{kj} \leq ||B||$.
+	Thus all together 
+	$$ ||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \} = max \{|\sum_{k = 1}^nA_{ik}B_{kj}|\ \forall\ i, j \} \leq max \{|\sum_{k = 1}^n||A||||B||| \leq n||A||||B||$$
+	Thus we can conclude $||AB|| \leq n||A||||B||$.
+
+\end{proof}
 
 \begin{lemma}[Modified Exercise 21 of Section 7.2 \cite{friedberg2003linear}]
 	Let $A \in M_{n \times n}(C)$ be a transition matrix.
@@ -527,7 +545,7 @@ The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}
 	Then we have the following:
 
 	\begin{enumerate}
-		\item $||AB|| \leq n||A||||B||$
+		
 		\item $||A^m|| \leq 1$ for every positive integer $m$.
 		\item $\exists c > 0$ such that $||J^m|| \leq c$ for every positive integer $m$.
 		\item Each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
@@ -542,9 +560,12 @@ The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}
 \begin{proof}
 
 \begin{enumerate}
+
+
 	\item 
 		If $A$ is a transition matrix, then every column sums to $1$ and every $A_{ij} \geq 0$.
-		Thus $\forall\ i, j\ 0 \leq A_{ij} \leq 1$ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$
+		Thus $\forall\ i, j\ 0 \leq A_{ij} \leq 1$ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$.
+
 
 	\item
 		If $J = P^{-1}AP$, then $J^m  = P^{-1}A^mP$ and $||J^m|| = || P^{-1}A^mP ||$
