@@ -57,6 +57,8 @@
 
 %5.17 - end
 
+\todo{figure out R and C}
+
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
 We will start off with basic definitions and then dive into theories, all of which are shown with sufficient proofs.
@@ -233,11 +235,11 @@ If $x_1$ or $x_2$ equals $0$, then the property above is trivially satifised.
 
 Otherwise we can consider $x_1, x_2, x_1 + x_2$ as vectors in the complex plane that form a triangle with $|x_1|, |x_2|, |x_1 + x_2| $ as the lengths of the sides of this triangle.
 But then by the cosine rule $|x_1 + x_2|^2 = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$, where $\Theta$ is the angle between $-x_1$ and $x_2$.
-Thus $(|x_1| + |x_2|)^2 = |x_1|^2 + |x_2|^2 + 2|x_1||x_2| = x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$
-which implies $1 = -cos\Theta$ or $\Theta = \pi$
+Thus $(|x_1| + |x_2|)^2 = |x_1|^2 + |x_2|^2 + 2|x_1||x_2| = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$
+which implies $1 = -cos\Theta$ and thus $\Theta = \pi$
 
 But if the angle between $-x_1$ and $x_2$ is $\pi$  then the angle between $x_1$ and $x_2$ is $0$.
-Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \geq 0$.
+Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \geq 0$, $c_1 \in \mathbb{R}$.
 
 
 
@@ -245,7 +247,7 @@ Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \g
 
 
 Inductive step:
-Assume that if $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ then $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$)
+Assume that if $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ then $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$)
 and $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$
 
 Then by the triangle inequality we have
@@ -259,7 +261,7 @@ which combined with the triangle inequality again implies
 
 $$\sum_{i = 1}^{n-1}| x_i| = |\sum_{i = 1}^{n-1} x_i|$$
 
-and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$ (where $c_1 = 1$).
 
 Therefore 
 $$|\sum_{i = 1}^{n} x_i| = |(\sum_{i = 1}^{n-1} c_ix_1) + x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
@@ -267,12 +269,12 @@ and
 $$|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i| =\sum_{i = 1}^{n-1}|c_i x_1| + |x_n| = |(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| $$.
 
 But we know by the base case that 
+$|(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$
+implies that $\exists k \geq 0, k \in \mathbb{R}$ such that $x_n = k((\sum_{i = 1}^{n-1} c_i)x_1)$.
+Let $c_n = k(\sum_{i = 1}^{n-1} c_i)$.
+Since $c_1, c_2 \ldots c_{n-1}, k \geq 0$ and are elements of $\mathbb{R}$, we know $c_n \geq 0 , c_n \in \mathbb{R}$.
 
-$$|(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
-
-implies that $\exists c_n \geq 0$ such that $x_n = c_n(\sum_{i = 1}^{n-1} c_i)x_1$
-
-and therefore $\exists c_n\textprime \geq 0, c_n\textprime = \sum_{i = 1}^{n-1} c_i$ such that $x_n = c_n\textprime x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+Therefore $\exists c_n \geq 0, c_n \in \mathbb{R}$ such that $x_n = c_n x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
 
 
 \end{proof}
@@ -619,7 +621,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 
 	\item 
-			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S = \{ \lambda \in C: |\lambda| < 1$ or $|\lambda| = 1\}$.
+			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
 			Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
 			Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
 
@@ -645,13 +647,15 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 
 	\item 
+
+			\todo{tighten up argument}
+			\todo{if x is a probability vector then it's the only one in E because it has to sum to 1, SHOW!}
 			We know $AL = L$ by $(4)$.
 			Let $L_i$ be the $ith$ column vector of $L$.
 			Then because $AL = L$, we know $AL_i = L_i \forall 1 \leq i \leq n$.
 			Thus $L_i$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda = 1$.
 
-			Additionally, because $L$ is a transition matrix by $(3)$, we know $L^tu = u$ and thus $\forall\ 1 \leq i \leq n\ L_i^t u = u$.
-			Thus $L_i$ is a probability vector.
+			Additionally, because $L$ is a transition matrix by $(3)$ $L_i$ is a probability vector.
 
 			But then using $(1)$, we know that the multiplicity of $1$ as an eigenvalue of $A$ is 1.
 			Thus all the columns of $L$ have to be a scalar multiple of the same vector.
