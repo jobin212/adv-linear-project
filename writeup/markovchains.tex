@@ -209,6 +209,14 @@ For any positive integer $m$, we have the following:
 
 \end{lemma}
 
+\begin{lemma}\label{benstheorem1}
+Let $A$ is a matrix in $\mathbb{C}$ such that the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$ and $J_{n_i}(\lambda_i)$ is the $n_i \times n_i$ Jordan block corresponding to eigenvalue $\lambda_i$.
+		
+		
+Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
+
+\end{lemma}
+
 
 
 \section{Theorems}
@@ -547,13 +555,10 @@ Then $||AB|| \leq n ||A|| ||B||$.
 		But since $P, P^{-1}$ are fixed, $||P||, ||P^{-1}||$ are constant and thus we have a constant $c = n^2 ||P^{-1}|| ||P||$ such that $||J^m|| \leq c\ \forall m \in \mathbb{Z}_{>0}$
 
 		
-
-
-	\todo{cite class?}	
 	\item 
 		By way of contradiction, suppose there exists a  Jordan block of $J$ corresponding to $\lambda = 1$ is not a $1 \times 1 $ matrix.
 		But we know for $n \geq 2$ that $(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1} = \ell * 1 = \ell$
-		But $(J_{1}^{ell})_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
+		But $(J_{1}^{\ell})_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
 
 		Thus $J_1$ is a $1 \times 1 $ matrix.
 
@@ -624,7 +629,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 			By the previous lemma and Theorem \ref{theorem519}, we know the multiplicity of $1$ as eigenvalue of $A$ is 1.
 	\end{comment}
 
-	\item 
+	\item \label{20b}
 	\begin{comment}
 			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
 			Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
@@ -633,7 +638,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 		Since $A$ is a matrix in $\mathbb{C}$, we know the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$.
 		
 		
-		Then by \todo{ben's theorem}, we know $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
+		Then by lemma \ref{benstheorem1}, we know $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
 		Consider $\lambda_i\ \forall\ 1 \leq i \leq r $, we know by \ref{theorem519} that either $|\lambda_i| < 1$ or $\lambda_i = 1$.
 		Thus
 
@@ -649,15 +654,15 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 
 		Additionally, for $|\lambda_i| < 1$, $J_{n_i}(\lambda_i)$ is an upper triangular matrix with values $|\lambda_i| < 1$ along the diagonal.
-		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to 0.
+		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim_{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to 0.
 
 		Thus
 		$$lim_{m \to \infty}J^m = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus \oplus_{i=1 |\lambda| < 1}^r0_{n_i} = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
 
-		And thus $lim_{m \to \infty}J^m$ exists and thus $lim_{m \to \infty}A^m$ exists.
+		And thus $lim_{m \to \infty}J^m$ exists and we can conclude $lim_{m \to \infty}A^m$ exists.
 			
 
-	\item 
+	\item \label{20c}
 			By Theorem \ref{theorem515} , we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
 			But due to transposition rules, we can equivalently say  $u^tL = u^t$.
 			But 
@@ -669,7 +674,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 			Thus $L$ is a transition matrix.
 
 
-	\item 
+	\item \label{20d}
 
 			By Theorem \ref{theorem512} \cite{friedberg2003linear}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
 
@@ -678,31 +683,29 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 			Thus $LA = AL = L$.
 
 
-	\item 
+	\item \label{20e}
 
-			\todo{tighten up argument}
-			\todo{if x is a probability vector then it's the only one in E because it has to sum to 1, SHOW!}
-			We know $AL = L$ by $(4)$.
+			We know $AL = L$ by item \ref{20d}.
 			Let $L_i$ be the $ith$ column vector of $L$.
 			Then because $AL = L$, we know $AL_i = L_i \forall 1 \leq i \leq n$.
 			Thus $L_i$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda = 1$.
+			Additionally, because $L$ is a transition matrix by item \ref{20c} we know $L_i$ is a probability vector.
 
-			Additionally, because $L$ is a transition matrix by $(3)$ $L_i$ is a probability vector.
+			By way of contradiction assume there exists two distinct eigenvectors $v_1, v_2$ corresponding to eigenvalue $\lambda = 1$ that are probability vectors.
+			By Theorem \ref{theorem519}, we know that $dim(E_{\lambda}) =1$ and thus $v_1$, $v_2$ must be multiples of eachother.
+			Thus $\exists c \neq 1 \in \mathbb{C}$ such that $v_2 = cv_1$.
+			But if the sum of the values of $v_1$ is equal to $1$, then the sum of the values of $v_2$ is equal to $c* 1 \neq 1$ and $v_2$ is not a probability vector, a contradiction.
 
-			But then using $(1)$, we know that the multiplicity of $1$ as an eigenvalue of $A$ is 1.
-			Thus all the columns of $L$ have to be a scalar multiple of the same vector.
-			But because every column is a probability vector, they have to be the same in order to satisfy $\forall 1 \leq i \leq n\ L_i^t u = u$. 
+			Thus there is a unique eigenvector $v$ corresponding to $\lambda = 1$ that is a probability vector and $\forall 1 \leq i \leq n L_i = v$.
 
-			Thus each column of $L$ is equal to the the unique probability vector $v$ corresponding to eigenvalue $1$.
-
-	\item 
+	\item \label{20f}
 		Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
-		We want to show $y = v$.
+		We want to show $y = w$.
 		
 		If $y = Lw$, then by the corollary to Theorem \ref{theorem515} , we know $y$ is a probability vector.
 		Additionally,
 		$$Ay = A(Lw) = (AL)w = Lw$$
-		by part $(4)$.
+		by item \ref{20d}.
 		But $Lw = y$ and thus $Ay = y$.
 
 		Therefore $y$ is an probability vector and eigenvector of $A$ corresponding to $\lambda = 1$

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex markovchains"] 1511989003 "markovchains.aux" "markovchains.bbl" "markovchains" 1511989004
+["bibtex markovchains"] 1511993117 "markovchains.aux" "markovchains.bbl" "markovchains" 1511993243
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
   "MathCitations.bib" 1510769021 13049 a4b620d8dfb9722e4eb5a9c2a0894006 ""
-  "markovchains.aux" 1511989004 2814 c1d100d78a20695f6f82e9f2c9ddce2e ""
+  "markovchains.aux" 1511993184 2123 d86bdff497f0056c5a17a33d521b7713 ""
   "markovchains.bcf" 0 -1 0 ""
   (generated)
   "markovchains.blg"
   "markovchains.bbl"
-["pdflatex"] 1511989003 "markovchains.tex" "markovchains.pdf" "markovchains" 1511989004
+["pdflatex"] 1511993183 "markovchains.tex" "markovchains.pdf" "markovchains" 1511993243
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -167,10 +167,10 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1487314880 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "markovchains.aux" 1511989004 2814 c1d100d78a20695f6f82e9f2c9ddce2e ""
-  "markovchains.bbl" 1511989003 260 1710607de344e2b7e787c38483d8f891 "bibtex markovchains"
-  "markovchains.tex" 1511989001 32759 11dba58aca1d25d25d207439e85e2472 ""
+  "markovchains.aux" 1511993184 2123 d86bdff497f0056c5a17a33d521b7713 ""
+  "markovchains.bbl" 1511993117 260 1710607de344e2b7e787c38483d8f891 "bibtex markovchains"
+  "markovchains.tex" 1511993243 33464 29818ffc2ae15ebf27f7f60f7b606a66 ""
   (generated)
-  "markovchains.pdf"
   "markovchains.aux"
   "markovchains.log"
+  "markovchains.pdf"
