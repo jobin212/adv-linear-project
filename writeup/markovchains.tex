@@ -67,7 +67,7 @@ Then, we will will deduce the relevant theorems and develop a whole swath of pro
 
 
 We rely heavily on results shown in previous parts of section 5.3 in addition to results shown section in 5.1 and 5.2 of \cite{friedberg2003linear}.
-Additionally, previous knowledge of Jordan Canonical Form is assumed.
+Additionally, previous knowledge of the cosine law and Jordan Canonical Form is assumed.
 
 \section{Basic Definitions and Notes}
 
@@ -690,6 +690,159 @@ The vector $v$ in Theorem \ref{theorem520}(5) is called the \textbf{fixed probab
 
 \end{definition}
 
+The following is an example 4 of section 5.3 from \cite{friedberg2003linear}.
+
+\begin{displayquote}
+	A survey in Persia showed that on a particular day 50\% of the Persians preferred a loaf of bread, 30\% preferred a jug of wine, and 20\% preferred "thou beside me in the wilderness." 
+	A subsequent survey 1 month later yielded the following data: Of those who preferred a loaf of bread on the first survey, 40\% continued to prefer a loaf of bread, 10\%: now preferred a jug of wine, and 50\% preferred "thou"; of those who preferred a jug of wine on the first survey, 20\%, now preferred a loaf of bread, 70\% continued to prefer a jug of wine, and 10\% now preferred "thou"; of those who preferred "thou" on the first survey, 20\% now preferred a loaf of bread, 20\% now preferred a jug of wine, and 60\% continued to prefer "thou."
+
+	Assuming that this trend continues, the situation described in the preceding paragraph is a three-state Markov chain in which the slates are the three possible preferences. We can predict the percentage of Persians in each state for each month following the original survey. 
+\end{displayquote}
+
+Letting the first, second, and third states be preferences for bread, wine, and "thou", respectively, we see that the probability vector that gives the initial probability of being in each state is
+
+\begin{equation}
+    P = \begin{bmatrix}
+           0.50 \\
+           0.30 \\
+           0.20
+         \end{bmatrix}
+\end{equation}
+
+and the transition matrix is
+
+\begin{equation}
+    A = \begin{bmatrix}
+           0.40 & 0.20 & 0.20  \\
+           0.10 & 0.70 & 0.20 \\
+           0.50 & 0.10 & 0.60
+         \end{bmatrix}
+\end{equation}
+
+The probabilities of being in each state $m$ months after the original survey are the coordinates of the vector $A^mP$.
+
+For example, after $m = 1$ month we have 
+
+\begin{equation}
+    AP = \begin{bmatrix}
+           0.30 \\
+           0.30 \\
+           0.40
+         \end{bmatrix}
+\end{equation}
+
+which means there's a 30\% chance of a randomly selected person havving a preference for bread, 30\% chance for wine, and 40\% chance for "thou".
+
+We can similarly calculate for $m = 2, 3, 4, \ldots $
+
+Since A is regular, the long-range prediction concerning the Persians' preferences can be found by computing the fixed probability vector for $A$. 
+This vector is the unique probability vector $v$ such that $(A - I)v = 0$
+
+If we let 
+\begin{equation}
+    v = \begin{bmatrix}
+           v_1 \\
+           v_2 \\
+           v_3
+
+
+         \end{bmatrix}
+\end{equation}
+
+we can solve the following system of linear equations
+
+\begin{equation}
+    \begin{bmatrix}
+           -0.60v_1 + 0.20v_2 + 0.20v_3  = 0 \\
+           0.10v_1 - 0.30v_2 + 0.20v_3 = 0\\
+           0.50v_1 + 0.10v_2 - 0.40v_3 = 0
+         \end{bmatrix}
+\end{equation}
+
+ to get 
+\begin{equation}
+    \begin{bmatrix}
+           5 \\
+           7 \\
+           8
+
+
+         \end{bmatrix}
+\end{equation}
+
+as a basis for the solution space of the sytem.
+Thus the unique fixed probability vector for $A$ is 
+
+\[  \begin{bmatrix}
+\frac{5}{5 + 7 + 8} \\
+\frac{7}{5 + 7 + 8}\\
+\frac{8}{5 + 7 + 8}
+\end{bmatrix} 
+%
+=
+\begin{bmatrix}{}
+0.25 \\
+0.35 \\
+0.4
+\end{bmatrix} 
+\]
+
+Thus, in the long run. 25\% of the Persians prefer a loaf of bread, 35\% prefer a jug of wine, and 40\% prefer "thou beside me in the wilderness."
+
+We can computationally confirm this by finding $lim_{m \to \infty}A^m$.
+
+Let 
+
+\begin{equation}
+    Q = \begin{bmatrix}
+           5 & 0 & -3  \\
+           7 & -1 & -1 \\
+           8 & 1 & 4
+         \end{bmatrix}
+\end{equation}
+
+
+then
+
+\begin{equation}
+    Q^{-1}AQ = \begin{bmatrix}
+           1 & 0 & 0  \\
+           0 & 0.5 & 0 \\
+           0 & 0 & 0.2
+         \end{bmatrix}
+\end{equation}
+
+So 
+
+\[  
+lim_{m \to \infty}A^m =
+lim_{m \to \infty}(QQ^{-1}AQQ^{-1})^m = 
+Q(lim_{m \to \infty}(Q^{-1}AQ)^m)Q^{-1} \]
+
+\[
+= Q \left[ lim_{m \to \infty} 
+\begin{bmatrix}
+   1 & 0 & 0  \\
+   0 & 0.5 & 0 \\
+   0 & 0 & 0.2
+ \end{bmatrix}^m \right] Q^{-1}
+ =
+Q 
+\begin{bmatrix}
+   1 & 0 & 0  \\
+   0 & 1 & 0 \\
+   0 & 0 & 1
+ \end{bmatrix}^m Q^{-1}
+ =
+ \begin{bmatrix}{}
+0.25 & 0.25 & 0.25 \\
+0.35 & 0.35 & 0.35\\
+0.4 & 0.4 & 0.4
+\end{bmatrix}
+\]
+
+which is as expected.
+
 \todo{example persia}
 
 \bibliographystyle{alpha}
@@ -697,3 +850,18 @@ The vector $v$ in Theorem \ref{theorem520}(5) is called the \textbf{fixed probab
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
