@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 NOV 2017 01:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 NOV 2017 01:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,22 +989,22 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--391
 
  []
 
 [4] [5] [6] (./markovchains.bbl) [7] (./markovchains.aux) ) 
 Here is how much of TeX's memory you used:
- 17179 strings out of 493014
- 326336 string characters out of 6133351
- 398578 words of memory out of 5000000
- 20229 multiletter control sequences out of 15000+600000
+ 17163 strings out of 493014
+ 325966 string characters out of 6133351
+ 393288 words of memory out of 5000000
+ 20213 multiletter control sequences out of 15000+600000
  9746 words of font info for 38 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,9n,96p,823b,848s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1024,7 +1024,7 @@ nts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on markovchains.pdf (7 pages, 192841 bytes).
+Output written on markovchains.pdf (7 pages, 191312 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

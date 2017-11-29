@@ -56,7 +56,6 @@
 %include abstract
 
 %5.17 - end
-\todo{check for cases where |lambda| = 1  but not -1, 1}
 
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
@@ -216,11 +215,59 @@ For any positive integer $m$, we have the following:
 \todo{redo theorem!!}
 
 \begin{lemma}[Section 6 Exercise 15(b)]
-Suppose $V$ is an inner product space.
-Show $|| x + y|| = || x|| + ||y||$ if and only if $x$ is a non-negative multiple of $y$.
+Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
+
+If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+
 \end{lemma}
 
+
 \begin{proof}
+We will proof by induction.
+
+Base Case: $n = 2$
+Suppose $|x_1 + x_2| = |x_1| + |x_2|$.
+Then
+
+
+Inductive step:
+Assume that if $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ then $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$)
+and $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$
+
+Then by the triangle inequality we have
+$$ \sum_{i = 1}^{n}| x_i| \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
+
+which implies 
+
+$$ \sum_{i = 1}^{n-1}| x_i| \leq |\sum_{i = 1}^{n-1} x_i|$$
+
+which combined with the triangle inequality again implies 
+
+$$\sum_{i = 1}^{n-1}| x_i| = |\sum_{i = 1}^{n-1} x_i|$$
+
+and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+
+Therefore 
+$$|\sum_{i = 1}^{n} x_i| = |(\sum_{i = 1}^{n-1} c_ix_1) + x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
+and
+$$|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i| =\sum_{i = 1}^{n-1}|c_i x_1| + |x_n| = |(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| $$.
+
+But we know by the base case that 
+
+$$|(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
+
+implies that $\exists c_n \geq 0$ such that $x_n = c_n(\sum_{i = 1}^{n-1} c_i)x_1$
+
+and therefore $\exists c_n\textprime \geq 0, c_n\textprime = \sum_{i = 1}^{n-1} c_i$ such that $x_n = c_n\textprime x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+
+
+\end{proof}
+
+\begin{comment}
+
+Suppose $V$ is an inner product space.
+Show $|| x + y|| = || x|| + ||y||$ if and only if $x$ is a non-negative multiple of $y$.
+
 $\rightarrow$ Suppose $x = cy$
 Then $$|| x  + y|| = ||cx + y|| = || (c +1) y|| = |c + 1| ||y|| = (c + 1) ||y|| =  |c| ||y|| + ||y|| = ||cy || + ||y|| = ||x|| + ||y||$$
 
@@ -246,7 +293,7 @@ And so on until we get $x_2 =\ c_2x_1 , x_3 =\ c_3x_1 \ldots x_n =\ c_nx_1\ $ if
 
 for non-negative scalars $c_1, c_2, \ldots c_n$.
 
-\end{remark}
+\end{comment}
 
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
@@ -371,7 +418,6 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 \end{corollary}
 
 \begin{proof}
-	\todo{lambda = -i?}
 	We know by Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
 	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
 	Suppose $|\lambda| = 1$.
