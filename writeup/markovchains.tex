@@ -92,8 +92,9 @@ We call an $n \times n$ $M$ a \textbf{transition matrix} if it contains only non
 We call a column vector $P$ a \textbf{probability vector} if it contains only nonnegative entries that sum to $1$.
 \end{definition}
 
-\begin{remark}[Theorem 5.15]
+\begin{remark}[Theorem 5.15 \cite{friedberg2003linear}]\label{theorem515}
 \begin{enumerate}
+	\item For the rest of the paper, let $u \in C^n$ be the column vector in which each coordinate equals $1$.
 	\item $M$ is a transition matrix if and only if $M^tu = u$.
 	\item $v$ is a probability vector if $u^tv = (1)$.
 	\item The product of two transition matrices is a transition matrix.
@@ -119,20 +120,71 @@ $$ \rho_i(A) = \sum_{j=1}^n|A_{ij}| $$
 
 and define $\nu_j(A)$ to be the sum of the absolute values of the entries of column $j$ of $A$ or 
 
-$$ \nu_j(A) = \sum_{j=1}^n|A_{ij}| $$
+$$ \nu_j(A) = \sum_{i=1}^n|A_{ij}| $$
 
 Then the \textbf{row sum} of A or $\rho(A)$ and the \textbf{column sum} or $\nu(A)$ are defined as:
 
 $$ \rho(A) = max\{\rho_i(A) \forall 1 \leq i \leq n \} $$
 $$ \nu(A) = max\{\nu_j(A) \forall 1 \leq j \leq n \} $$
 
-
 \end{definition}
 
 
 
+We also use several key theorems presented earlier in the text.
+We present them without proof below.
+
+\begin{theorem}[Theorem 5.12 \cite{friedberg2003linear}]\label{theorem512}
+Let $A_1,\ A_2, \ldots$ be a sequence of $n \times p$ matrices with complex entries that converge to the matrix $L$.
+Then $\forall P \in M_{r \times n}(\mathbb{C}), Q \in M_{n \times p}(\mathbb{C})$, we have 
+$$lim_{m \to \infty} PA_m = PL$$
+and 
+$$ lim_{m \to \infty} A_mQ = LQ $$
+
+\end{theorem}
+
+
+\begin{theorem}[Theorem 5.13 \cite{friedberg2003linear}]\label{theorem513}
+Let $A \in M_{n \times n}(\mathbb{C})$ and for the rest of the paper let $S = \{ \lambda \in C: |\lambda| < 1$ or $\lambda = 1\}$
+
+Then $lim_{m \to \infty}A^m$ exists if and only if both the following conditions hold:
+
+\begin{enumerate}
+	\item Every eigenvalue of $A$ is contained in $S$.
+	\item If $1$ is an eigenvalue of $A$, then the dimension of the eigenspace corresponding to $1$ equals the multiplicity of $1$ as an eigenvalue of $A$.
+
+\end{enumerate}
+
+\end{theorem}
+
+\begin{theorem}[Theorem 5.14 \cite{friedberg2003linear}]\label{theorem514}
+
+Let $A \in M_{n \times n}(\mathbb{C})$.
+Then $lim_{m \to \infty}A^m$ exists if the following two conditions hold:
+
+\begin{enumerate}
+	\item Every eigenvalue of $A$ is contained in $S$.
+	\item $A$ is diagonalizable.
+
+\end{enumerate}
+
+\end{theorem}
+
+
+\begin{theorem}[Gerschgorin's Disk Theorem Corollary 3 \cite{friedberg2003linear}]\label{theorem516}
+If $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+
+\end{theorem}
+
+\begin{theorem}[Theorem 5.17 \cite{friedberg2003linear}]\label{theorem517}
+Every transition matrix has $1$ as an eigenvalue.
+
+\end{theorem}
+
 
 \section{Theorems}
+
+\todo{redo theorem!!}
 
 \begin{lemma}[Section 6 Exercise 15(b)]
 Suppose $V$ is an inner product space.
@@ -159,7 +211,7 @@ Then by the previous lemma $x_n = c_n* \sum_{i = 1}^{n-1} x_i$ if and only if
 
 $$||\sum_{i = 1}^n x_i|| = ||\sum_{i = 1}^{n-1} x_i|| + ||x_n||$$.
 
-Then we can repeat to get $||x_{n-1}|| = c_{n-1}  * \sum_{i = 1}^{n-2} x_i$ if and only if $$ ||\sum_{i = 1}^{n-1} x_i|| =  ||\sum_{i = 1}^{n-2} x_i|| + ||x_{n-1}||  $$
+Then we can repeat to get $x_{n-1} = c_{n-1}  * \sum_{i = 1}^{n-2} x_i$ if and only if $$ ||\sum_{i = 1}^{n-1} x_i|| =  ||\sum_{i = 1}^{n-2} x_i|| + ||x_{n-1}||  $$
 
 And so on until we get $x_2 =\ c_2x_1 , x_3 =\ c_3x_1 \ldots x_n =\ c_nx_1\ $ if and only if  $$||\sum_{i = 1}^n x_i|| = \sum_{i = 1}^{n} ||x_i||$$ 
 
@@ -168,7 +220,7 @@ for non-negative scalars $c_1, c_2, \ldots c_n$.
 \end{remark}
 
 
-\begin{theorem}[Theorem 5.18 pg. 298]
+\begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
 Let $A \in M_{n \lambda n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
 Then $\lambda = \rho(A)$ and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \in C^n$ is the column vector in which each coordinate equals $1$.
 
@@ -264,7 +316,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 	Now notice that because the rows of $A$ are the columns of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
 
 
-	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem 5.18 \cite{friedberg2003linear}, the basis of $E_{\lambda}\textprime = \{ u \}$, where $u \in C^n$ is the column vector in which each coordinate contains $1$ and $\lambda = \rho(A^t) = \nu(A)$.
+	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$, where $u \in C^n$ is the column vector in which each coordinate contains $1$ and $\lambda = \rho(A^t) = \nu(A)$.
 	
 	Thus $dim(E_{\lambda}\textprime) = 1$.
 	But by exercise $13$ of $5.2$ of \cite{friedberg2003linear}, we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
@@ -274,7 +326,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 
 
 
-\begin{corollary}[Corollary 2 pg. 299]
+\begin{corollary}[Corollary 2 pg. 299 \cite{friedberg2003linear}]
 
 	Let $A \in M_{n \times n}(C)$ be a transition matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $\lambda \neq 1$.
 	Then  $|\lambda| < 1$ and the eigenspace corresponding to the eigenvalue $1$ has dimension $1$.
@@ -282,14 +334,14 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 \end{corollary}
 
 \begin{proof}
-	We know by corollary 3 of Theorem 5.16 \cite{friedberg2003linear} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+	We know by corollary 3 of Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
 	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
 	Suppose $|\lambda| = 1$.
 	We know that the sum of each column of $A$ is 1 and thus $\nu(A) = 1$ and thus $|\lambda| = \nu(A)$.
 	But this means by the previous corollary that $\lambda = \nu(A) = 1 \neq -1$.
 	Thus $\lambda \neq 1$ implies $|\lambda| < 1$.
 
-	If $A$ is a transition matrix, then by Theorem 5.17 \cite{friedberg2003linear} we know that $1$ is an eigenvalue. 
+	If $A$ is a transition matrix, then by Theorem \ref{theorem517} we know that $1$ is an eigenvalue. 
 	We also know that if $A$ is a transition matrix, then given $u$ as a column vector in which each coordinate equals 1, then $A^tu = u$.
 
 	Because $\forall i\ u_i = 1$, we know
@@ -301,7 +353,7 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 
 \end{proof}
 
-\begin{theorem}[Theorem 5.19 pg. 298]
+\begin{theorem}[Theorem 5.19 pg. 298]\label{theorem519}
 Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then 
 
 \begin{enumerate}
@@ -314,7 +366,7 @@ Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$
 
 \begin{proof}
 
-We know $(1)$ was proved in Corollary 3 of Theorem 5.16 \cite{friedberg2003linear}.
+We know $(1)$ was proved in Corollary 3 of Theorem \ref{theorem516}.
 
 Since $A$ is regular, we know by definition $\exists s \in \mathbb{N}_{>0}$ such that $A^s$ has only positive entries.
 Moreover $A^s$ and $A^{s+1}$ are transition matrices because $A$ is a transition matrix and the product of transition matrices is a transition matrix.
@@ -350,18 +402,18 @@ Then $\lim_{m \to \infty} A^m$ exists.
 
 \begin{proof}
 
-We know by Theorem 5.14 \cite{friedberg2003linear} that if $A \in M_{n \times n}(C)$ is diagonalizable and has every eigenvalue contained in $S$, where $S = \{ \lambda \in C: |\lambda| < 1$ or $|\lambda| = 1\}$, then $\lim_{m \to \infty} A^m$ exists.
+We know by Theorem \ref{theorem514} that if $A \in M_{n \times n}(C)$ is diagonalizable and has every eigenvalue contained in $S$, then $\lim_{m \to \infty} A^m$ exists.
 
 
 Thus because $A$ is diagonalizable by assumption, we just need to show for all eigenvalues $\lambda$ of $A$, $\lambda \in S$.
-But we know by Theorem 5.19 that $\forall$ eigenvalues $\lambda$, $\lambda = 1$ or $|\lambda| < 1$ and thus $\lambda \in S$.
+But we know by Theorem \ref{theorem519} that $\forall$ eigenvalues $\lambda$, $\lambda = 1$ or $|\lambda| < 1$ and thus $\lambda \in S$.
 Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
 
 \end{proof}
 
 
 
-The following lemmas use Jordan Canonical form to prove Theorem 5.20.
+The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}.
 
 \begin{lemma}[Modified Exercise 21 of Section 7.2 \cite{friedberg2003linear}]
 	Let $A \in M_{n \times n}(C)$ be a transition matrix.
@@ -381,11 +433,31 @@ The following lemmas use Jordan Canonical form to prove Theorem 5.20.
 
 \end{lemma}
 
-\begin{comment}
 \begin{proof}
 
+\begin{enumerate}
+	\item 
+		If $A$ is a transition matrix, then every columns to $1$ and every $A_{ij} \geq 0$.
+		Thus $\forall\ i, j\ 0 \leq A_{ij} < \leq $ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$
 
-	We know that $A$ has eigenvalue $1$ by Theorem 5.17 \cite{friedberg2003linear} and the characteristic polynomial of $A$ splits. 
+	\item
+		If $J = P^{-1}AP$, then 
+
+	\item 
+		By way of contradiction, suppose there exists a  Jordan block of $J$ corresponding to $\lambda = 1$ is not a $1 \times 1 $ matrix.
+		Then $J$ is of the form 
+		But then for any $c$, we can choose an $m = c +1$ such that $||J^m|| > c$ because $J_{12}^m = m = c+1 > c$.
+		Thus we have a contradiction and therefore $J$ is a $1 \times 1$ matrix.
+
+
+\end{enumerate}
+
+
+\begin{comment}
+
+
+
+	We know that $A$ has eigenvalue $1$ by Theorem 5.17 \cite{friedberg2003linear} and the characteristic polynomial of $A$ splits because $C$ is an algebraically closed field. 
 
 
 	Thus by Theorem 7.4 \cite{friedberg2003linear}, we know $\forall\ 1 \leq i \leq k$, $dim(K_{1})$ is the multiplicity of $1$ as an eigenvalue of $A$.
@@ -398,10 +470,12 @@ The following lemmas use Jordan Canonical form to prove Theorem 5.20.
 
 
 
-\end{proof}
+
 \end{comment}
 
-\begin{theorem}[Theorem 5.20]
+\end{proof}
+
+\begin{theorem}[Theorem 5.20 \cite{friedberg2003linear}] \label{theorem520}
 
 Let $A$ be an $n \times n$ regular transition matrix. Then:
 
@@ -429,16 +503,25 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 \begin{enumerate}
 
 	\item
-			By the previous lemma and Theorem 5.19, we know the multiplicity of $1$ as eigenvalue of $A$ is 1.
+			We know that $A$ has eigenvalue $1$ by Theorem \ref{theorem517} and the characteristic polynomial of $A$ splits because $C$ is an algebraically closed field. Additionally, by Theorem 7.4 \cite{friedberg2003linear}, we know $\forall\ 1 \leq i \leq k$, $dim(K_{1})$ is the multiplicity of $1$ as an eigenvalue of $A$.  
+
+			%Finally, we know $E_{\lambda} \subseteq K_{\lambda}$ by Theorem 7.1.
+
+			But if each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix, then $dim(K_1) = 1$.
+			Thus the multiplicity of $1$ as an eigenvalue of $A$ is $1$.
+			%But if $E_{\lambda} \subseteq K_1$, then $dim(E_{\lambda}) = 1$.
+
+
+			By the previous lemma and Theorem \ref{theorem519}, we know the multiplicity of $1$ as eigenvalue of $A$ is 1.
 
 
 	\item 
-			By Theorem 5.19 \cite{friedberg2003linear}, we know all eigenvalues $\lambda$ of $A$ are contained in $S = \{ \lambda \in C: |\lambda| < 1$ or $|\lambda| = 1\}$.
+			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S = \{ \lambda \in C: |\lambda| < 1$ or $|\lambda| = 1\}$.
 			Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
-			Thus, by Theorem 5.13 of \cite{friedberg2003linear}, we know that $\lim_{m \to \infty} A^m$ exists.
+			Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
 
 	\item 
-			By theorem 5.15 \cite{friedberg2003linear}, we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
+			By Theorem \ref{theorem515} , we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
 			But due to transposition rules, we can equivalently say  $u^tL = u^t$.
 			But 
 			$$u^tL = u^t \lim_{m \to \infty} A^m = \lim_{m \to \infty} u^t A^m$$
@@ -451,7 +534,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 	\item 
 
-			By Theorem 5.12 \cite{friedberg2003linear}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
+			By Theorem \ref{theorem512} \cite{friedberg2003linear}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
 
 			But $\lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^{m} = L$.
 
@@ -477,7 +560,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 		Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
 		We want to show $y = v$.
 		
-		If $y = Lw$, then by the corollary to Theorem 5.15 \cite{friedberg2003linear}, we know $y$ is a probability vector.
+		If $y = Lw$, then by the corollary to Theorem \ref{theorem515} , we know $y$ is a probability vector.
 		Additionally,
 		$$Ay = A(Lw) = (AL)w = Lw$$
 		by part $(4)$.
@@ -494,6 +577,11 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 \end{proof}
 
 \section{Applications}
+
+\begin{definition}
+The vector $v$ in Theorem \ref{theorem520}(5) is called the \textbf{fixed probability vector} or \textbf{stationary vector} of the regular transition matrix $A$.
+
+\end{definition}
 
 \bibliographystyle{alpha}
 \bibliography{MathCitations} 
