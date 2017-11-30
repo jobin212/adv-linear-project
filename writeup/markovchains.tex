@@ -60,8 +60,8 @@
 
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
-We will start off with basic definitions and then dive into theories, all of which are shown with sufficient proofs.
-Then, we will will deduce the relevant theorems and develop a whole swath of properties for square regular transition matrices.
+We will start off with basic definitions and cover assumed prior knowledge.
+Then, we will will deduce the relevant theorems and develop a whole swath of properties for square regular transition matrices and stationary vectors .
 %Finally, we will explore applications of these theorems.
 
 
@@ -218,6 +218,14 @@ Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ ex
 \end{lemma}
 
 
+\begin{lemma}\label{jordanblockexp}
+Let $J_|\lambda|$ be the Jordan block corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}\mathbb{C}$ with $n \geq 2$.
+Then  $\forall \ell \in \mathbb{N}_{> 0}$ we have 
+$$(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1}$$.
+
+\end{lemma}
+
+
 
 \section{Theorems}
 
@@ -248,13 +256,8 @@ But if the angle between $-x_1$ and $x_2$ is $\pi$  then the angle between $x_1$
 Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \geq 0$, $c_1 \in \mathbb{R}$.
 
 
-
-
-
-
 Inductive step:
-Assume that if $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ then $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$)
-and $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$
+Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
 
 Then by the triangle inequality we have
 $$ \sum_{i = 1}^{n}| x_i| \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
@@ -285,6 +288,7 @@ Therefore $\exists c_n \geq 0, c_n \in \mathbb{R}$ such that $x_n = c_n x_1$ and
 
 \end{proof}
 
+\newpage 
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
 Let $A \in M_{n \times n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
@@ -328,8 +332,6 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 
 \end{enumerate}
 
-\todo{handle page split}
-
 
 But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
 
@@ -369,14 +371,14 @@ Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a
 
 
 Now note that because $A$ has all positive values and $u$ has all positive values, then $Au$ has all positive values. Therefore, because  $\lambda u = Au$, $\lambda u$ has all positive values.
-Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\lambda = |\lambda| = \rho(A)$
+Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\lambda = |\lambda| = \rho(A)$.
 
 
 \end{proof}
 
 \begin{corollary}[Corollary 1 pg. 299 \cite{friedberg2003linear} ]\label{cor5181}
 
-	Let $A \in M_{n \times n}(C)$ be a matrix in which each entry is positiive and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
+	Let $A \in M_{n \times n}(C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
 	Then  $\lambda = \nu(A)$ and $E_{\lambda}$ has dimension 1. \newline
 
 \end{corollary}
@@ -426,11 +428,6 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 
 
 \end{proof}
-
-\begin{lemma}
-
-PLACEHOLDER
-\end{lemma}
 
 \begin{theorem}[Theorem 5.19 pg. 298]\label{theorem519}
 Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then 
@@ -557,7 +554,7 @@ Then $||AB|| \leq n ||A|| ||B||$.
 		
 	\item 
 		By way of contradiction, suppose there exists a  Jordan block of $J$ corresponding to $\lambda = 1$ is not a $1 \times 1 $ matrix.
-		But we know for $n \geq 2$ that $(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1} = \ell * 1 = \ell$
+		But we know by lemma \ref{jordanblockexp} for $n \geq 2$ that $(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1} = \ell * 1 = \ell$.
 		But $(J_{1}^{\ell})_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
 
 		Thus $J_1$ is a $1 \times 1 $ matrix.
@@ -654,7 +651,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 
 		Additionally, for $|\lambda_i| < 1$, $J_{n_i}(\lambda_i)$ is an upper triangular matrix with values $|\lambda_i| < 1$ along the diagonal.
-		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim_{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to 0.
+		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim_{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to $0_{n_i}$.
 
 		Thus
 		$$lim_{m \to \infty}J^m = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus \oplus_{i=1 |\lambda| < 1}^r0_{n_i} = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
@@ -766,7 +763,7 @@ For example, after $m = 1$ month we have
          \end{bmatrix}
 \end{equation}
 
-which means there's a 30\% chance of a randomly selected person havving a preference for bread, 30\% chance for wine, and 40\% chance for "thou".
+which means there's a 30\% chance of a randomly selected person having a preference for bread, 30\% chance for wine, and 40\% chance for "thou".
 
 We can similarly calculate for $m = 2, 3, 4, \ldots $
 
@@ -805,7 +802,7 @@ we can solve the following system of linear equations
          \end{bmatrix}
 \end{equation}
 
-as a basis for the solution space of the sytem.
+as a basis for the solution space of the system.
 Thus the unique fixed probability vector for $A$ is 
 
 \[  \begin{bmatrix}
