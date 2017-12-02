@@ -57,7 +57,7 @@
 \section{Introduction}
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
 We will start off with basic definitions and cover assumed prior knowledge.
-Then, we will will deduce the relevant theorems and develop a whole swath of properties for square regular transition matrices and stationary vectors .
+Then, we will will deduce the relevant theorems and develop a whole swath of properties for regular transition matrices and stationary vectors .
 Finally, we will explore applications of these theorems.
 
 
@@ -262,7 +262,8 @@ Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \g
 Inductive step:
 Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
 
-Then by the triangle inequality we have
+First, we want to be able to show that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ so we can use the inductive hypothesis.
+First, by the triangle inequality we have
 $$\sum_{i = 1}^{n}| x_i| = |\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
 
 which implies 
@@ -398,13 +399,10 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 	We know by lemma \ref{exercise5114} that $A$ and $A^t$ have the same eigenvalues.
 	Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
 
-	Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
-
-
-	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
+	Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.  Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
 	
-	Thus $dim(E_{\lambda}\textprime) = 1$.
-	But by lemma \ref{exercise5213} , we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
+	Then $dim(E_{\lambda}\textprime) = 1$ and by lemma \ref{exercise5213} , we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
+	
 	Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
 
 \end{proof}
@@ -519,7 +517,7 @@ Then $||AB|| \leq n ||A|| ||B||$.
 	Next, we know that $|(AB)_{ij}|  = |\sum_{k = 1}^nA_{ik}B_{kj}|$ and 
 	$\forall\ i, j, k\ A_{ik} \leq ||A||,  B_{kj} \leq ||B||$.
 	Thus all together 
-	$$ ||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \} = max \{|\sum_{k = 1}^nA_{ik}B_{kj}|\ \forall\ i, j \} \leq max \{|\sum_{k = 1}^n||A||||B||| \leq n||A||||B||$$
+	$$ ||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \} = max \{|\sum_{k = 1}^nA_{ik}B_{kj}|\ \forall\ i, j \} \leq \sum_{k = 1}^n||A||||B||| \leq n||A||||B||$$
 	Thus we can conclude $||AB|| \leq n||A||||B||$.
 
 \end{proof}
