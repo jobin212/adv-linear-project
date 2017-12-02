@@ -235,7 +235,7 @@ $$(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1}$$.
 \begin{lemma}\label{section615b}
 Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
 
-If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$ (where $c_1 = 1$).
+If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}_{\geq 0}$ (where $c_1 = 1$, $x_1 \neq 0$).
 
 \end{lemma}
 
@@ -262,34 +262,40 @@ Inductive step:
 Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
 
 Then by the triangle inequality we have
-$$ \sum_{i = 1}^{n}| x_i| \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
+$$\sum_{i = 1}^{n}| x_i| = |\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
 
 which implies 
 
 $$ \sum_{i = 1}^{n-1}| x_i| \leq |\sum_{i = 1}^{n-1} x_i|$$
 
-which combined with the triangle inequality again implies 
+
+And by the triangle inequality again we also have:
+$$ |\sum_{i = 1}^{n-1} x_i| \leq \sum_{i = 1}^{n-1}| x_i|$$
+
+
+which combined implies
 
 $$\sum_{i = 1}^{n-1}| x_i| = |\sum_{i = 1}^{n-1} x_i|$$
 
-and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$ (where $c_1 = 1$).
+and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}_{\geq 0}$ (where $c_1 = 1, x_1 \neq 0$).
 
 Therefore 
 $$|\sum_{i = 1}^{n} x_i| = |(\sum_{i = 1}^{n-1} c_ix_1) + x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
 and
-$$|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i| =\sum_{i = 1}^{n-1}|c_i x_1| + |x_n| = |(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| $$.
+$$\sum_{i = 1}^{n}| x_i| = \sum_{i = 1}^{n-1}| x_i| + |x_n| = |\sum_{i = 1}^{n-1} x_i| + |x_n| = |(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| $$.
 
 But we know by the base case that 
 $|(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$
-implies that $\exists k \geq 0, k \in \mathbb{R}$ such that $x_n = k((\sum_{i = 1}^{n-1} c_i)x_1)$.
+implies that $\exists k \in \mathbb{R}_{\geq 0}$ such that $x_n = k((\sum_{i = 1}^{n-1} c_i)x_1)$.
 Let $c_n = k(\sum_{i = 1}^{n-1} c_i)$.
-Since $c_1, c_2 \ldots c_{n-1}, k \geq 0$ and are elements of $\mathbb{R}$, we know $c_n \geq 0 , c_n \in \mathbb{R}$.
+Since $c_1, c_2 \ldots c_{n-1}, k \geq 0$ and are elements of $\mathbb{R}$, we know $c_n \in \mathbb{R}_{\geq 0}$.
 
-Therefore $\exists c_n \geq 0, c_n \in \mathbb{R}$ such that $x_n = c_n x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+Therefore $\exists c_n \in \mathbb{R}_{\geq 0}$ such that $x_n = c_n x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \in \mathbb{R}_{\geq 0}$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
 
 
 \end{proof}
 
+\todo{need new page}
 \newpage 
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
@@ -303,7 +309,7 @@ Then $\lambda = \rho(A)$ and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \i
 First we want to show that $\{ u \}$ is a basis for $E_{\lambda}$.
 To show this, we are going to use the fact that $|\lambda| = \rho(A)$ to derive several equalities giving us information about $A$.
 
-First, let $v$ be an eigenvector of $A$ corresponding to $\lambda$ with coordinates $v_1, v_2, \ldots, v_n$.  
+Let $v$ be an eigenvector of $A$ corresponding to $\lambda$ with coordinates $v_1, v_2, \ldots, v_n$.  
 Now choose $k$ such that $v_k$ is the coordinate of $v$ with the largest absolute value and let $b = |v_k|$.
 
 Then $$ |\lambda|\ b =\ |\lambda|\ |v_k| = |\lambda v_k| $$
@@ -335,10 +341,9 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 \end{enumerate}
 
 
-But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$
-
-By the first lemma, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of some nonzero complex number $z$.
-Without loss of generality, assume $|z| = 1$.
+But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$.
+By lemma \ref{section615b}, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of eachother.
+Without loss of generality, we can assume they are multiples of a complex number $|z| = 1$ by adjusting the contants $c_i \ldots c_n$.
 Then $\exists c_1, c_2, \ldots c_n$ such that $A_{kj}v_j = c_j z$.
 Since $A_{kj} > 0$, we can say $v_j = \frac{c_jz}{A_{kj}}$.
 
@@ -346,11 +351,12 @@ By $(2)$ above, we know $\forall  1 \leq j \leq n\ , |v_j| = b$ and therefore
 
 $$b = |v_j| = |\frac{c_jz}{A_{kj}}|$$
 
-But $A_{kj} > 0$ by assumption and $c_j$ is nonnegative.  Thus
+But $A_{kj} > 0$ by assumption and $c_j$ is nonnegative.  
+Thus
 
-$$ |\frac{c_jz}{A_{kj}}| = |\frac{c_j}{A_{kj}}||z| = |\frac{c_j}{A_{kj}}|*1 = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
+$$ b = |\frac{c_jz}{A_{kj}}| = |\frac{c_j}{A_{kj}}||z| = |\frac{c_j}{A_{kj}}|*1 = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
 
-Since $A_{kj}v_j = c_j z$, this gives us $v_j = bz\ \forall j$ and thus 
+Since $v_j = \frac{c_jz}{A_{kj}}$, this gives us $v_j = bz\ \forall j$ and thus 
 
 
 \begin{equation}
@@ -388,7 +394,7 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 \begin{proof}
 
 	Consider $A^t$ and let $E_{\lambda},\ E_{\lambda}\textprime$ be the eigenspaces of $\lambda$ corresponding to $A,\ A^t$ respectively.
-	We know by lemma \ref{exercise5114} in \cite{friedberg2003linear} that $A$ and $A^t$ have the same eigenvalues.
+	We know by lemma \ref{exercise5114} that $A$ and $A^t$ have the same eigenvalues.
 	Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
 
 	Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
@@ -397,7 +403,7 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 	Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
 	
 	Thus $dim(E_{\lambda}\textprime) = 1$.
-	But by lemma \ref{exercise5213} of \cite{friedberg2003linear}, we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
+	But by lemma \ref{exercise5213} , we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
 	Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
 
 \end{proof}
@@ -466,7 +472,8 @@ We now split this proof into parts:
 	\item 
 
 		Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
-		Then by lemma \ref{exercise5115} $E_{\lambda} \subseteq E_{\lambda}\textprime$ and because $dim(E_{\lambda}\textprime) = 1$, we know $dim(E_{\lambda}) = 1$.
+		Then by lemma \ref{exercise5115} $E_{\lambda} \subseteq E_{\lambda}\textprime$.
+		But then by corollary \ref{cor5182} we know $dim(E_{\lambda}\textprime) = 1$, and thus $dim(E_{\lambda}) = 1$.
 \end{enumerate}
 
 \end{proof}
@@ -561,6 +568,8 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 		Thus $J_1$ is a $1 \times 1 $ matrix.
 
+		\todo{fix this to work with lemma with n > 2}
+
 
 \end{enumerate}
 
@@ -573,7 +582,6 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 \begin{enumerate} 
 
-	%\item The multiplicity of $1$ as an eigenvalue of $A$ is $1$.
 
 	\item $\lim_{m \to \infty} A^m$ exists.
 
@@ -581,7 +589,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 	\item $LA = AL = L$.
 
-	\item The columns of $L$ are identical and equal to the unique probability vector $v$ that is equal to the eigenvalue $1$.
+	\item The columns of $L$ are identical and equal to the unique probability vector $v$ that is equal to eigenvector corresponding to the eigenvalue $1$.
 
 	\item For any probability vector $w$, $\lim_{m \to \infty} A^m w = v$.
 
@@ -594,51 +602,12 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 \begin{enumerate}
 
-	\begin{comment}
-	\item
-			We know that $A$ has eigenvalue $1$ by Theorem \ref{theorem517} and the characteristic polynomial of $A$ splits because $C$ is an algebraically closed field. Additionally, by Theorem 7.4 \cite{friedberg2003linear}, we know $\forall\ 1 \leq i \leq k$, $dim(K_{1})$ is the multiplicity of $1$ as an eigenvalue of $A$.  
-
-			%Finally, we know $E_{\lambda} \subseteq K_{\lambda}$ by Theorem 7.1.
-
-			But if each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix, then $dim(K_1) = 1$.
-			Thus the multiplicity of $1$ as an eigenvalue of $A$ is $1$.
-			%But if $E_{\lambda} \subseteq K_1$, then $dim(E_{\lambda}) = 1$.
-
-
-			By the previous lemma and Theorem \ref{theorem519}, we know the multiplicity of $1$ as eigenvalue of $A$ is 1.
-	\end{comment}
-
 	\item \label{20b}
-	\begin{comment}
-			By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
-			Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
-			Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
-	\end{comment}
-		Since $A$ is a matrix in $\mathbb{C}$, we know the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$.
-		
-		
-		Then by lemma \ref{benstheorem1}, we know $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
-		Consider $\lambda_i\ \forall\ 1 \leq i \leq r $, we know by \ref{theorem519} that either $|\lambda_i| < 1$ or $\lambda_i = 1$.
-		Thus
-
-		$$lim_{m \to \infty}J^m = lim_{m \to \infty}(\oplus_{i=1}^rJ_{n_i}(\lambda_i))^m = \oplus_{i=1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
-
-		$$ = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus\ \oplus_{i=1 |\lambda| < 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
-
-		%$$lim_{m \to \infty}((\oplus_{i=1, \lambda_i = 1}^rJ_{n_i}(1))^m \oplus  \oplus_{i=1, |\lambda_i| < 1}^r(J_{n_i}(\lambda_i))^m $$
-
-		But by lemma \ref{exericse7221}, we know the size of the blocks corresponding to $\lambda = 1$ have size $1 \times 1$.
-		Thus $\forall i$ such that $\lambda_i =1$, we know $n_i = 1$ and moreover $J_1(1) = 1$.
-		Thus $lim_{m \to \infty}(J_{1}(1))^m = lim_{m \to \infty} (1)^m = 1 $ and thus $\oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m $ converges.
-
-
-		Additionally, for $|\lambda_i| < 1$, $J_{n_i}(\lambda_i)$ is an upper triangular matrix with values $|\lambda_i| < 1$ along the diagonal.
-		Thus $\forall i$ such that $|\lambda_i| < 1$  we have that $lim_{m \to \infty}(J_{n_i}(\lambda_i))^m$ converges to $0_{n_i}$.
-
-		Thus
-		$$lim_{m \to \infty}J^m = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m \oplus \oplus_{i=1 |\lambda| < 1}^r0_{n_i} = \oplus_{i=1 \lambda = 1}^rlim_{m \to \infty}(J_{n_i}(\lambda_i))^m$$
-
-		And thus $lim_{m \to \infty}J^m$ exists and we can conclude $lim_{m \to \infty}A^m$ exists.
+		\todo{fix !!}
+		By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
+		Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
+		Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
+	
 			
 
 	\item \label{20c}
@@ -679,7 +648,7 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 	\item \label{20f}
 		Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
-		We want to show $y = w$.
+		We want to show $y = v$.
 		
 		If $y = Lw$, then by the corollary to Theorem \ref{theorem515} , we know $y$ is a probability vector.
 		Additionally,
