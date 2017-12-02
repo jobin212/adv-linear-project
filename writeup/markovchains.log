@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 NOV 2017 23:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 DEC 2017 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,25 +989,44 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (52.7503pt too wide) in paragraph at lines 223--223
+[][][][]\OT1/cmr/m/n/10 sizeofjordanblcokgreaterthan2?  
+ []
+
+
+Overfull \hbox (52.7503pt too wide) in paragraph at lines 223--223
+[][][][]\OT1/cmr/m/n/10 sizeofjordanblcokgreaterthan2?  
+ []
+
+
+Overfull \hbox (52.7503pt too wide) in paragraph at lines 223--223
+[][][][]\OT1/cmr/m/n/10 sizeofjordanblcokgreaterthan2?  
+ []
+
+
+Overfull \hbox (52.7503pt too wide) in paragraph at lines 223--223
+[][][][]\OT1/cmr/m/n/10 sizeofjordanblcokgreaterthan2?  
+ []
+
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 381--383
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
 
  []
 
 [5] [6] [7] [8] (./markovchains.bbl) [9] (./markovchains.aux) ) 
 Here is how much of TeX's memory you used:
- 17080 strings out of 493014
- 323898 string characters out of 6133351
- 392937 words of memory out of 5000000
- 20130 multiletter control sequences out of 15000+600000
+ 17157 strings out of 493014
+ 325699 string characters out of 6133351
+ 393081 words of memory out of 5000000
+ 20207 multiletter control sequences out of 15000+600000
  9746 words of font info for 38 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 62i,8n,96p,823b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,9n,96p,823b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texli
@@ -1024,7 +1043,7 @@ t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on markovchains.pdf (9 pages, 200756 bytes).
+Output written on markovchains.pdf (9 pages, 201306 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

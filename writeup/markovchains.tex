@@ -210,7 +210,7 @@ For any positive integer $m$, we have the following:
 \end{lemma}
 
 \begin{lemma}\label{benstheorem1}
-Let $A$ is a matrix in $\mathbb{C}$ such that the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$ and $J_{n_i}(\lambda_i)$ is the $n_i \times n_i$ Jordan block corresponding to eigenvalue $\lambda_i$.
+Let $A$ be a matrix in $\mathbb{C}$ such that the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$ and $J_{n_i}(\lambda_i)$ is the $n_i \times n_i$ Jordan block corresponding to eigenvalue $\lambda_i$.
 		
 		
 Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
@@ -219,7 +219,9 @@ Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ ex
 
 
 \begin{lemma}\label{jordanblockexp}
-Let $J_|\lambda|$ be the Jordan block corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}\mathbb{C}$ with $n \geq 2$.
+
+\todo{sizeofjordanblcokgreaterthan2?}
+Let $J|\lambda|$ be the Jordan block corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}(\mathbb{C})$ with $n \geq 2$.
 Then  $\forall \ell \in \mathbb{N}_{> 0}$ we have 
 $$(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1}$$.
 
@@ -230,7 +232,7 @@ $$(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1}$$.
 \section{Theorems}
 
 
-\begin{lemma}[Section 6 Exercise 15(b)]
+\begin{lemma}\label{section615b}
 Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
 
 If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$ (where $c_1 = 1$).
@@ -562,26 +564,6 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 \end{enumerate}
 
-
-\begin{comment}
-
-
-
-	We know that $A$ has eigenvalue $1$ by Theorem 5.17 \cite{friedberg2003linear} and the characteristic polynomial of $A$ splits because $C$ is an algebraically closed field. 
-
-
-	Thus by Theorem 7.4 \cite{friedberg2003linear}, we know $\forall\ 1 \leq i \leq k$, $dim(K_{1})$ is the multiplicity of $1$ as an eigenvalue of $A$.
-	Additionally, we know $E_{\lambda} \subseteq K_{\lambda}$ by Theorem 7.1.
-
-	But if each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix, then $dim(K_1) = 1$.
-	But if $E_{\lambda} \subseteq K_1$, then $dim(E_{\lambda}) = 1$.	
-
-
-
-
-
-
-\end{comment}
 
 \end{proof}
 
