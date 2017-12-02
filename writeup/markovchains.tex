@@ -37,10 +37,6 @@
 
 \newtheorem{corollary}{Corollary}[theorem]
 
-%%%
-%%% The following, if uncommented, numbers equations within sections.
-%%% 
-
 \numberwithin{equation}{section}
 
 
@@ -62,7 +58,7 @@
 In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
 We will start off with basic definitions and cover assumed prior knowledge.
 Then, we will will deduce the relevant theorems and develop a whole swath of properties for square regular transition matrices and stationary vectors .
-%Finally, we will explore applications of these theorems.
+Finally, we will explore applications of these theorems.
 
 
 We rely heavily on results shown in previous parts of section 5.3 in addition to results shown section in 5.1 and 5.2 of \cite{friedberg2003linear}.
@@ -210,11 +206,17 @@ For any positive integer $m$, we have the following:
 \end{lemma}
 
 \begin{lemma}\label{benstheorem1}
-\todo{fix}
-Let $A$ be a matrix in $\mathbb{C}$ such that the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$ and $J_{n_i}(\lambda_i)$ is the $n_i \times n_i$ Jordan block corresponding to eigenvalue $\lambda_i$.
-		
-		
-Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ exists.
+
+Let $A \in M_{n \times n}(\mathbb{C})$.
+Then $lim_{m \to \infty}A^m$ exists if and only if
+
+	\begin{enumerate}
+		\item Every eigenvalue of $A$ is contained in $S$ (recall $S = \{ \lambda \in C: |\lambda| < 1$ or $\lambda = 1\}$).
+
+		\item If $1$ is an eigenvalue of $A$, then every Jordan-$1$-block has size $1 \times 1$.
+
+
+	\end{enumerate}
 
 \end{lemma}
 
@@ -294,7 +296,7 @@ Therefore $\exists c_n \in \mathbb{R}_{\geq 0}$ such that $x_n = c_n x_1$ and th
 
 \end{proof}
 
-\todo{need new page}
+%\todo{need new page}
 \newpage 
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
@@ -560,12 +562,14 @@ Then $||AB|| \leq n ||A|| ||B||$.
 		But since $P, P^{-1}$ are fixed, $||P||, ||P^{-1}||$ are constant and thus we have a constant $c = n^2 ||P^{-1}|| ||P||$ such that $||J^m|| \leq c\ \forall m \in \mathbb{Z}_{>0}$
 
 		
-	\item 
+	\item \label{jordan1size}
 		By way of contradiction, suppose there exists a  Jordan block of $J_{n_i}(\lambda)$ in $J$ corresponding to $\lambda = 1$ of size $n_i \times n_i$ where $n_i \neq 1$ (which implies $n_i \geq 2)$.
 		But we know by lemma \ref{jordanblockexp} for $n_i \geq 2$ that $(J_{n_i}(\lambda))^{m}_{12} = \ell \lambda^{m -1} = m * 1 = m$.
 		But $(J_{n_i}(\lambda))^{m}_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
 
 		Thus $J_1$ is a $1 \times 1 $ matrix.
+
+
 
 \end{enumerate}
 
@@ -599,14 +603,16 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 \begin{enumerate}
 
 	\item \label{20b}
-		\todo{fix !!}
-		By Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
-		Additionally, we know the multiplicity of $1$ as an eigenvalue of $A$ is $1$ by part $(1)$ and that the dimension of the eigenspace corresponding to eigenvector $1$ has dimension $1$.
-		Thus, by Theorem \ref{theorem513}, we know that $\lim_{m \to \infty} A^m$ exists.
+
+		By lemma \ref{exericse7221}, since $A \in M_{n \times n}(\mathbb{C})$ and $A$ a is transition matrix we know $A$ has a Jordan Canonical form $J$ to which $A$ is similar and that each Jordan block of $J$ corresponding to eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
+
+		Additionally, by Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
+
+		Thus, by Theorem \ref{benstheorem1}, we know that $\lim_{m \to \infty} A^m$ exists.
 	
 			
 
-	\item \label{20c}
+	\item \label{20c}{}
 			By Theorem \ref{theorem515} , we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
 			But due to transposition rules, we can equivalently say  $u^tL = u^t$.
 			But 
