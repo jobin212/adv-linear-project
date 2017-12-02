@@ -210,6 +210,7 @@ For any positive integer $m$, we have the following:
 \end{lemma}
 
 \begin{lemma}\label{benstheorem1}
+\todo{fix}
 Let $A$ be a matrix in $\mathbb{C}$ such that the characteristic polynomial of $A$ splits over $\mathbb{C}$ and thus $A \sim J = \oplus_{i=1}^rJ_{n_i}(\lambda_i) \in M_{n \times n}\mathbb{C}$, where $\lambda_1, \lambda_2, \ldots \lambda_r$ are the distinct eigenvalues of $A$ and $J_{n_i}(\lambda_i)$ is the $n_i \times n_i$ Jordan block corresponding to eigenvalue $\lambda_i$.
 		
 		
@@ -219,11 +220,9 @@ Then by $lim_{m \to \infty}A^m$ exists if and only if $lim_{m \to \infty}J^m$ ex
 
 
 \begin{lemma}\label{jordanblockexp}
-
-\todo{sizeofjordanblcokgreaterthan2?}
-Let $J|\lambda|$ be the Jordan block corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}(\mathbb{C})$ with $n \geq 2$.
+Let $J_{n_i}(\lambda)$ be the Jordan block of size $n_i \times n_i$ corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}(\mathbb{C})$ where $n_i \geq 2$.
 Then  $\forall \ell \in \mathbb{N}_{> 0}$ we have 
-$$(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1}$$.
+$$(J_{n_i}(\lambda))^{\ell}_{12} = \ell \lambda^{\ell -1}$$.
 
 \end{lemma}
 
@@ -562,14 +561,11 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 		
 	\item 
-		By way of contradiction, suppose there exists a  Jordan block of $J$ corresponding to $\lambda = 1$ is not a $1 \times 1 $ matrix.
-		But we know by lemma \ref{jordanblockexp} for $n \geq 2$ that $(J_{\lambda = 1}^{\ell})_{12} = \ell \lambda^{\ell -1} = \ell * 1 = \ell$.
-		But $(J_{1}^{\ell})_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
+		By way of contradiction, suppose there exists a  Jordan block of $J_{n_i}(\lambda)$ in $J$ corresponding to $\lambda = 1$ of size $n_i \times n_i$ where $n_i \neq 1$ (which implies $n_i \geq 2)$.
+		But we know by lemma \ref{jordanblockexp} for $n_i \geq 2$ that $(J_{n_i}(\lambda))^{m}_{12} = \ell \lambda^{m -1} = m * 1 = m$.
+		But $(J_{n_i}(\lambda))^{m}_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
 
 		Thus $J_1$ is a $1 \times 1 $ matrix.
-
-		\todo{fix this to work with lemma with n > 2}
-
 
 \end{enumerate}
 
@@ -677,7 +673,7 @@ The following is an example 4 of section 5.3 from \cite{friedberg2003linear}.
 
 \begin{displayquote}
 	A survey in Persia showed that on a particular day 50\% of the Persians preferred a loaf of bread, 30\% preferred a jug of wine, and 20\% preferred "thou beside me in the wilderness." 
-	A subsequent survey 1 month later yielded the following data: Of those who preferred a loaf of bread on the first survey, 40\% continued to prefer a loaf of bread, 10\%: now preferred a jug of wine, and 50\% preferred "thou"; of those who preferred a jug of wine on the first survey, 20\%, now preferred a loaf of bread, 70\% continued to prefer a jug of wine, and 10\% now preferred "thou"; of those who preferred "thou" on the first survey, 20\% now preferred a loaf of bread, 20\% now preferred a jug of wine, and 60\% continued to prefer "thou."
+	A subsequent survey 1 month later yielded the following data: Of those who preferred a loaf of bread on the first survey, 40\% continued to prefer a loaf of bread, 10\% now preferred a jug of wine, and 50\% preferred "thou"; of those who preferred a jug of wine on the first survey, 20\% now preferred a loaf of bread, 70\% continued to prefer a jug of wine, and 10\% now preferred "thou"; of those who preferred "thou" on the first survey, 20\% now preferred a loaf of bread, 20\% now preferred a jug of wine, and 60\% continued to prefer "thou."
 
 	Assuming that this trend continues, the situation described in the preceding paragraph is a three-state Markov chain in which the slates are the three possible preferences. We can predict the percentage of Persians in each state for each month following the original survey. 
 \end{displayquote}
