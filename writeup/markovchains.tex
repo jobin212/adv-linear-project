@@ -13,6 +13,19 @@
                 petri,%
                 topaths}%
 \usepackage{tkz-berge}
+\usepackage{filecontents}
+\begin{filecontents}{markovbib.bib}
+@book{friedberg2003linear,
+  title={Linear Algebra},
+  author={Friedberg, S.H. and Insel, A.J. and Spence, L.E.},
+  isbn={9780130084514},
+  lccn={96026503},
+  series={Featured Titles for Linear Algebra (Advanced) Series},
+  url={https://books.google.com/books?id=HCUlAQAAIAAJ},
+  year={2003},
+  publisher={Pearson Education}
+}
+\end{filecontents}
 \usepackage[position=top]{subfig}
 
 
@@ -828,7 +841,8 @@ which is as expected.
 
 
 \bibliographystyle{alpha}
-\bibliography{MathCitations} 
+\bibliography{markovbib} 
+
 
 
 \end{document}

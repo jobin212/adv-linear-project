@@ -179,6 +179,10 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tkz-berge/tkz-arith.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tkz-berge/tkz-arith.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tkz-base/tkz-tools-arith.tex
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tkz-base/tkz-tools-arith.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/filecontents/filecontents.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/filecontents/filecontents.sty
+INPUT markovbib.bib
+OUTPUT markovbib.bib
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
