@@ -13,19 +13,6 @@
                 petri,%
                 topaths}%
 \usepackage{tkz-berge}
-\usepackage{filecontents}
-\begin{filecontents}{markovbib.bib}
-@book{friedberg2003linear,
-  title={Linear Algebra},
-  author={Friedberg, S.H. and Insel, A.J. and Spence, L.E.},
-  isbn={9780130084514},
-  lccn={96026503},
-  series={Featured Titles for Linear Algebra (Advanced) Series},
-  url={https://books.google.com/books?id=HCUlAQAAIAAJ},
-  year={2003},
-  publisher={Pearson Education}
-}
-\end{filecontents}
 \usepackage[position=top]{subfig}
 
 
@@ -75,7 +62,7 @@ Finally, we will explore applications of these theorems.
 
 
 We rely heavily on results shown in previous parts of section 5.3 in addition to results shown section in 5.1 and 5.2 of \cite{friedberg2003linear}.
-Additionally, previous knowledge of the cosine law and Jordan Canonical Form is assumed.
+Additionally, previous knowledge of the cosine law and Jordan Canonical Form is assumed and we use results shown by Ben Pioso in \cite{benspaper}.
 
 \section{Basic Definitions and Notes}
 
@@ -218,7 +205,7 @@ For any positive integer $m$, we have the following:
 
 \end{lemma}
 
-\begin{lemma}\label{benstheorem1}
+\begin{theorem}[proven by Ben Pioso in \cite{benspaper}]\label{benstheorem1}
 
 Let $A \in M_{n \times n}(\mathbb{C})$.
 Then $lim_{m \to \infty}A^m$ exists if and only if
@@ -231,7 +218,8 @@ Then $lim_{m \to \infty}A^m$ exists if and only if
 
 	\end{enumerate}
 
-\end{lemma}
+
+\end{theorem}
 
 
 \begin{lemma}\label{jordanblockexp}
@@ -260,7 +248,7 @@ We will proof by induction.
 Base Case: $n = 2$
 Suppose $|x_1 + x_2| = |x_1| + |x_2|$.
 
-If $x_1$ or $x_2$ equals $0$, then the property above is trivially satifised.
+If $x_1$ or $x_2$ equals $0$, then the property above is trivially satisfied.
 
 
 Otherwise we can consider $x_1, x_2, x_1 + x_2$ as vectors in the complex plane that form a triangle with $|x_1|, |x_2|, |x_1 + x_2| $ as the lengths of the sides of this triangle.
@@ -276,15 +264,19 @@ Inductive step:
 Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
 
 First, we want to be able to show that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ so we can use the inductive hypothesis.
-First, by the triangle inequality we have
-$$\sum_{i = 1}^{n}| x_i| = |\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
+By the triangle inequality we have
+$$|\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
+
+and thus 
+
+$$ \sum_{i = 1}^{n}| x_i| = |\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
 
 which implies 
 
-$$ \sum_{i = 1}^{n-1}| x_i| \leq |\sum_{i = 1}^{n-1} x_i|$$
+$$ \sum_{i = 1}^{n-1}| x_i| \leq |\sum_{i = 1}^{n-1} x_i|.$$
 
 
-And by the triangle inequality again we also have:
+And by the triangle inequality again for the first $n-1$ terms we have:
 $$ |\sum_{i = 1}^{n-1} x_i| \leq \sum_{i = 1}^{n-1}| x_i|$$
 
 
@@ -358,7 +350,7 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 
 But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$.
 By lemma \ref{section615b}, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of eachother.
-Without loss of generality, we can assume they are multiples of a complex number $|z| = 1$ by adjusting the contants $c_i \ldots c_n$.
+Without loss of generality, we can assume they are multiples of a complex number $|z| = 1$ by adjusting the constants $c_i \ldots c_n$.
 Then $\exists c_1, c_2, \ldots c_n$ such that $A_{kj}v_j = c_j z$.
 Since $A_{kj} > 0$, we can say $v_j = \frac{c_jz}{A_{kj}}$.
 
@@ -841,8 +833,22 @@ which is as expected.
 
 
 \bibliographystyle{alpha}
-\bibliography{markovbib} 
 
+\begin{thebibliography}{9}
+ 
+\bibitem{friedberg2003linear} 
+Friedberg, S.H. and Insel, A.J. and Spence, L.E.
+\textit{Linear Algebra}.
+Featured Titles for Linear Algebra (Advanced) Series.
+Pearson Education,
+2003.
+
+\bibitem{benspaper} 
+Pioso, Ben.
+\textit{Matrix Limits, Including Jordan Canonical Form}.
+2017.
+
+\end{thebibliography}
 
 
 \end{document}

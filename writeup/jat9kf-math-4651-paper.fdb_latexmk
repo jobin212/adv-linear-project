@@ -1,12 +1,5 @@
 # Fdb version 3
-["bibtex regular-transition-matrices"] 1512248697 "regular-transition-matrices.aux" "regular-transition-matrices.bbl" "regular-transition-matrices" 1512248698
-  "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "markovbib.bib" 1512248697 469 a0473913086e18821dd99b8e0e77c3e8 ""
-  "regular-transition-matrices.aux" 1512248698 1958 455d1ec9eedcac5c1ba4c826ed9539ae ""
-  "regular-transition-matrices.bcf" 0 -1 0 ""
-  (generated)
-  "regular-transition-matrices.bbl"
-["pdflatex"] 1512248697 "regular-transition-matrices.tex" "regular-transition-matrices.pdf" "regular-transition-matrices" 1512248698
+["pdflatex"] 1513114663 "jat9kf-math-4651-paper.tex" "jat9kf-math-4651-paper.pdf" "jat9kf-math-4651-paper" 1513114664
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -129,7 +122,6 @@
   "/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty" 1454367706 61475 003441129fdf4a7c533e485780ad0320 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/etex-pkg/etex.sty" 1452550431 18118 a8beec638fbedd21cebf2f16ba45756f ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1438639395 41547 7860e623236f5f726a4099bbb7dd89fb ""
-  "/usr/local/texlive/2016/texmf-dist/tex/latex/filecontents/filecontents.sty" 1318204110 3051 59db604ab40642b14aebfdb750266186 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1459978653 3103 f32642b1cd56c010cdfb6545539b7f0b ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty" 1462915952 14391 bd64a9e5d07473b936423b5f3280ed2c ""
@@ -167,12 +159,9 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1487314880 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "markovbib.bib" 1512248697 469 a0473913086e18821dd99b8e0e77c3e8 ""
-  "regular-transition-matrices.aux" 1512248698 1958 455d1ec9eedcac5c1ba4c826ed9539ae ""
-  "regular-transition-matrices.bbl" 1512248697 260 1710607de344e2b7e787c38483d8f891 "bibtex regular-transition-matrices"
-  "regular-transition-matrices.tex" 1512248537 31064 563209d575c8c2277f3b3dd803a89e41 ""
+  "jat9kf-math-4651-paper.aux" 1513114663 1999 2ddf930b83db255e4599ac888b639e03 ""
+  "jat9kf-math-4651-paper.tex" 1513114662 31163 ffc0808343a84b3534be1efc1892f1a8 ""
   (generated)
-  "regular-transition-matrices.log"
-  "regular-transition-matrices.pdf"
-  "regular-transition-matrices.aux"
-  "markovbib.bib"
+  "jat9kf-math-4651-paper.pdf"
+  "jat9kf-math-4651-paper.aux"
+  "jat9kf-math-4651-paper.log"
