@@ -55,20 +55,27 @@
 
 
 \section{Introduction}
-In this paper, we explore properties of regular transition matrices using the guidance of Friedberg, Insel, and Spence \cite{friedberg2003linear}.
-We will start off with basic definitions and cover assumed prior knowledge.
-Then, we will will deduce the relevant theorems and develop a whole swath of properties for regular transition matrices and stationary vectors .
-Finally, we will explore applications of these theorems.
+In this paper, we explore properties of regular transition matrices
+using the guidance of Friedberg, Insel, and Spence
+\cite{friedberg2003linear}. We will start off with basic definitions
+and cover assumed prior knowledge. Then, we will deduce the relevant
+theorems and develop a whole swath of properties for regular
+transition matrices and stationary vectors . Finally, we will
+explore applications of these theorems.
 
 
-We rely heavily on results shown in previous parts of section 5.3 in addition to results shown section in 5.1 and 5.2 of \cite{friedberg2003linear}.
-Additionally, previous knowledge of the cosine law and Jordan Canonical Form is assumed and we use results shown by Ben Pioso in \cite{benspaper}.
+We rely heavily on results shown in previous parts of section 5.3 in
+addition to results shown in section 5.1 and 5.2 of
+\cite{friedberg2003linear}. Additionally, previous knowledge of the
+cosine law and Jordan Canonical Form is assumed, and we use results
+shown by Ben Pioso in \cite{benspaper}.
 
 \section{Basic Definitions and Notes}
 
 \begin{definition}[Matrix Limit]
 Let $L$, $A_1$, $A_2$, $\ldots$, be $n \times p$ matrices having complex entries.
-The sequence $A_1, A_2, \ldots$ is said to \textbf{converge} to the $n \times p$ matrix $L$, called the \textbf{limit} of the sequence, if $\forall 1 \leq i \leq n$ and $\forall 1 \leq j \leq p$
+The sequence $A_1, A_2, \ldots$ is said to \textbf{converge} to the $n \times p$ matrix $L$,
+called the \textbf{limit} of the sequence, if $\forall 1 \leq i \leq n$ and $\forall 1 \leq j \leq p$
 
 $$lim_{m \to \infty}(A_m)_{ij} = L_{ij}.$$
 
@@ -79,17 +86,20 @@ In this case, we write $$ lim_{m \to \infty}(A_m) = L.$$
 
 
 \begin{definition}[Transition Matrix, Probability Vector]
-We call an $n \times n$ $M$ a \textbf{transition matrix} if it contains only nonnegative entries and all of its columns sum to $1$.
-We call a column vector $P$ a \textbf{probability vector} if it contains only nonnegative entries that sum to $1$.
+We call an $n \times n$ matrix $M$ with real entries a
+\textbf{transition matrix} if it contains only nonnegative entries
+and all of its columns sum to $1$. We call a column vector $P$ a
+\textbf{probability vector} if it contains only nonnegative entries
+that sum to $1$.
 \end{definition}
 
 \begin{remark}[Theorem 5.15 \cite{friedberg2003linear}]\label{theorem515}
 \begin{enumerate}
-	\item For the rest of the paper, let $u \in C^n$ be the column vector in which each coordinate equals $1$.
-	\item $M$ is a transition matrix if and only if $M^tu = u$.
-	\item $v$ is a probability vector if $u^tv = (1)$.
-	\item The product of two transition matrices is a transition matrix.
-	\item The product of a transition matrix and a probability vector is a probability vector.
+    \item For the rest of the paper, let $u \in \mathbb{C}^n$ be the column vector in which each coordinate equals $1$.
+    \item $M \in M_{n \times n }(\mathbb{R})$ with nonnegative entries is a transition matrix if and only if $M^tu = u$.
+    \item $v \in \mathbb{R}^n$ with nonnegative coordinates is a probability vector if and only if $u^tv = (1)$.
+    \item The product of two transition matrices is a transition matrix.
+    \item The product of a transition matrix and a probability vector is a probability vector.
 \end{enumerate}
 
 \end{remark}
@@ -103,13 +113,13 @@ A transition matrix $M$ is called regular if there exists an $s \in \mathbb{N}_{
 \end{definition}
 
 \begin{definition}[Row Sum, Column Sum]
-Let $A \in M_{n \times n }(C)$.
+Let $A \in M_{n \times n }(\mathbb{C})$.
 
-$\forall 1 \leq i, j \leq n$, define $\rho_i(A)$ to be the sum of the absolute values of the entries of row $i$ of $A$ or 
+$\forall 1 \leq i, j \leq n$, define $\rho_i(A)$ to be the sum of the absolute values of the entries of row $i$ of $A$ or
 
 $$ \rho_i(A) = \sum_{j=1}^n|A_{ij}| $$
 
-and define $\nu_j(A)$ to be the sum of the absolute values of the entries of column $j$ of $A$ or 
+and define $\nu_j(A)$ to be the sum of the absolute values of the entries of column $j$ of $A$ or
 
 $$ \nu_j(A) = \sum_{i=1}^n|A_{ij}| $$
 
@@ -126,23 +136,27 @@ We also use several key theorems presented earlier in the text.
 We present them without proof below.
 
 \begin{theorem}[Theorem 5.12 \cite{friedberg2003linear}]\label{theorem512}
-Let $A_1,\ A_2, \ldots$ be a sequence of $n \times p$ matrices with complex entries that converge to the matrix $L$.
-Then $\forall P \in M_{r \times n}(\mathbb{C}), Q \in M_{n \times p}(\mathbb{C})$, we have 
+Let $A_1,\ A_2, \ldots$ be a sequence of $n \times p$ matrices with
+complex entries that converge to the matrix $L$. Then $\forall P \in
+M_{r \times n}(\mathbb{C}), Q \in M_{p \times s}(\mathbb{C})$, we
+have
 $$lim_{m \to \infty} PA_m = PL$$
-and 
+and
 $$ lim_{m \to \infty} A_mQ = LQ $$
 
 \end{theorem}
 
 
 \begin{theorem}[Theorem 5.13 \cite{friedberg2003linear}]\label{theorem513}
-Let $A \in M_{n \times n}(\mathbb{C})$ and for the rest of the paper let $S = \{ \lambda \in C: |\lambda| < 1$ or $\lambda = 1\}$
+Let $A \in M_{n \times n}(\mathbb{C})$, and for the rest of the
+paper let $S = \{ \lambda \in \mathbb{C}: |\lambda| < 1$ or $\lambda
+= 1\}$.
 
 Then $lim_{m \to \infty}A^m$ exists if and only if both the following conditions hold:
 
 \begin{enumerate}
-	\item Every eigenvalue of $A$ is contained in $S$.
-	\item If $1$ is an eigenvalue of $A$, then the dimension of the eigenspace corresponding to $1$ equals the multiplicity of $1$ as an eigenvalue of $A$.
+    \item Every eigenvalue of $A$ is contained in $S$.
+    \item If $1$ is an eigenvalue of $A$, then the dimension of the eigenspace corresponding to $1$ equals the multiplicity of $1$ as an eigenvalue of $A$.
 
 \end{enumerate}
 
@@ -154,8 +168,8 @@ Let $A \in M_{n \times n}(\mathbb{C})$.
 Then $lim_{m \to \infty}A^m$ exists if the following two conditions hold:
 
 \begin{enumerate}
-	\item Every eigenvalue of $A$ is contained in $S$.
-	\item $A$ is diagonalizable.
+    \item Every eigenvalue of $A$ is contained in $S$.
+    \item $A$ is diagonalizable.
 
 \end{enumerate}
 
@@ -163,7 +177,8 @@ Then $lim_{m \to \infty}A^m$ exists if the following two conditions hold:
 
 
 \begin{theorem}[Gerschgorin's Disk Theorem Corollary 3 \cite{friedberg2003linear}]\label{theorem516}
-If $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+If $\lambda \in \mathbb{C}$ is an eigenvalue of a transition matrix,
+then $|\lambda| \leq 1$.
 
 \end{theorem}
 
@@ -172,15 +187,17 @@ Every transition matrix has $1$ as an eigenvalue.
 
 \end{theorem}
 
-\begin{lemma}[Exercise 5.1.14 \cite{friedberg2003linear}]\label{exercise5114}
-Let $A \in M_{n \times n}(F)$.
+In the next three lemmas, $F$ is a field and $A \in M_n(F)$.
 
-Then $A, A^t$ have the same characteristic polynomial and hence the same eigenvalues.
+\begin{lemma}[Exercise 5.1.14 \cite{friedberg2003linear}]\label{exercise5114}
+$A, A^t$ have the same characteristic polynomial and hence the same
+eigenvalues.
 \end{lemma}
 
 \begin{lemma}[Exercise 5.2.13 \cite{friedberg2003linear}]\label{exercise5213}
-Let $A \in M_{n \times n}(F)$.
-Then for any eigenvalue $\lambda$ of $A, A^t$, let $E_{\lambda}, E_{\lambda}\textprime$ denote the corresponding eigenvalues for $A, A^t$ respectively.
+For any eigenvalue $\lambda$ of $A, A^t$, let $E_{\lambda},
+E_{\lambda}\textprime$ denote the corresponding eigenvalues for $A,
+A^t$ respectively.
 
 
 Then for any $\lambda$, $dim(E_{\lambda})\ =\  dim(E_{\lambda}\textprime)$.
@@ -188,18 +205,21 @@ Then for any $\lambda$, $dim(E_{\lambda})\ =\  dim(E_{\lambda}\textprime)$.
 \end{lemma}
 
 \begin{lemma}[Exercise 5.1.15b \cite{friedberg2003linear}]\label{exercise5115}
-Let $A \in M_{n \times n}(F)$.
-Let $x$ be an eigenvector of $A$ corresponding to the eigenvalue $\lambda$.
-For any positive integer $m$, we have the following:
+Let $x \in F^n$ be an eigenvector of $A$ corresponding to the
+eigenvalue $\lambda$. For any positive integer $m$, we have the
+following:
 
 \begin{enumerate}
-	\item 
-		$x$ is an eigenvector of $A^m$ corresponding to the eigenvalue $\lambda^m$
+    \item
+        $x$ is an eigenvector of $A^m$ corresponding to the eigenvalue
+        $\lambda^m$.
 
-	\item 
-		Let $E_{\lambda}$ denote the eigenspace of $A$ corresponding to eigenvalue $\lambda$ and $E_{\lambda}\textprime$ the eigenspace of $A^m$ corresponding to $\lambda$.
-		Since $x$ is an eigenvector of $A$ corresponding to the eigenvalue $\lambda$ implies that $x$ is an eigenvector of $A^m$ corresponding to $\lambda^m$, we can conclude $x \in E_{\lambda}$ implies $x \in E_{\lambda}\textprime$.
-		Thus $E_{\lambda} \subseteq E_{\lambda}\textprime$.
+    \item
+        Let $E_{\lambda}$ denote the eigenspace of $A$ corresponding to eigenvalue $\lambda$ and $E_{\lambda}\textprime$ the
+        eigenspace of $A^m$ corresponding to $\lambda$.
+        Since $x$ is an eigenvector of $A$ corresponding to the eigenvalue $\lambda$ implies that $x$ is an eigenvector of $A^m$ corresponding to
+        $\lambda^m$, we can conclude $x \in E_{\lambda}$ implies $x \in E_{\lambda}\textprime$.
+        Thus $E_{\lambda} \subseteq E_{\lambda}\textprime$.
 
 \end{enumerate}
 
@@ -210,13 +230,13 @@ For any positive integer $m$, we have the following:
 Let $A \in M_{n \times n}(\mathbb{C})$.
 Then $lim_{m \to \infty}A^m$ exists if and only if
 
-	\begin{enumerate}
-		\item Every eigenvalue of $A$ is contained in $S$ (recall $S = \{ \lambda \in C: |\lambda| < 1$ or $\lambda = 1\}$).
+    \begin{enumerate}
+        \item Every eigenvalue of $A$ is contained in $S$ (recall $S = \{ \lambda \in \mathbb{C}: |\lambda| < 1$ or $\lambda = 1\}$).
 
-		\item If $1$ is an eigenvalue of $A$, then every Jordan-$1$-block has size $1 \times 1$.
+        \item If $1$ is an eigenvalue of $A$, then every Jordan-$1$-block has size $1 \times 1$.
 
 
-	\end{enumerate}
+    \end{enumerate}
 
 
 \end{theorem}
@@ -224,7 +244,7 @@ Then $lim_{m \to \infty}A^m$ exists if and only if
 
 \begin{lemma}\label{jordanblockexp}
 Let $J_{n_i}(\lambda)$ be the Jordan block of size $n_i \times n_i$ corresponding to eigenvalue $\lambda$ of some matrix $A \in M_{n \times n}(\mathbb{C})$ where $n_i \geq 2$.
-Then  $\forall \ell \in \mathbb{N}_{> 0}$ we have 
+Then  $\forall \ell \in \mathbb{N}_{> 0}$ we have
 $$(J_{n_i}(\lambda))^{\ell}_{12} = \ell \lambda^{\ell -1}$$.
 
 \end{lemma}
@@ -235,43 +255,54 @@ $$(J_{n_i}(\lambda))^{\ell}_{12} = \ell \lambda^{\ell -1}$$.
 
 
 \begin{lemma}\label{section615b}
-Let $x_1, x_2, \ldots x_n \in \mathbb{C}$
+Let $x_1, x_2, \ldots x_n \in \mathbb{C}$, and assume $x_1 \neq 0$.
 
-If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1 \leq i \leq n\ \exists\ c_i$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}_{\geq 0}$ (where $c_1 = 1$, $x_1 \neq 0$).
+If $|\sum_{i = 1}^n x_i| = \sum_{i = 1}^{n}| x_i|$ then $\forall\ 1
+\leq i \leq n\ \exists\ c_i$ such that $x_i = c_ix_1$ and $c_i \in
+\mathbb{R}_{\geq 0}$ (where $c_1 = 1$).
 
 \end{lemma}
 
 
 \begin{proof}
-We will proof by induction.
+We will prove this by induction on $n$.
+
 
 Base Case: $n = 2$
 Suppose $|x_1 + x_2| = |x_1| + |x_2|$.
 
-If $x_1$ or $x_2$ equals $0$, then the property above is trivially satisfied.
+If $x_2$ equals $0$, then the property above is trivially satisfied
+with $c_2 = 0$.
 
 
-Otherwise we can consider $x_1, x_2, x_1 + x_2$ as vectors in the complex plane that form a triangle with $|x_1|, |x_2|, |x_1 + x_2| $ as the lengths of the sides of this triangle.
-But then by the cosine rule $|x_1 + x_2|^2 = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$, where $\Theta$ is the angle between $-x_1$ and $x_2$.
-Thus $(|x_1| + |x_2|)^2 = |x_1|^2 + |x_2|^2 + 2|x_1||x_2| = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$
-which implies $1 = -cos\Theta$ and thus $\Theta = \pi$
+Otherwise we can consider $-x_1, x_2, x_1 + x_2$ as vectors in the
+complex plane that form a triangle with $|x_1|, |x_2|, |x_1 + x_2| $
+as the lengths of the sides of this triangle. But then by the cosine
+rule $|x_1 + x_2|^2 = |x_1|^2 + |x_2|^2 - 2|x_1||x_2|cos\Theta$,
+where $\Theta$ is the angle between $-x_1$ and $x_2$. Thus $(|x_1| +
+|x_2|)^2 = |x_1|^2 + |x_2|^2 + 2|x_1||x_2| = |x_1|^2 + |x_2|^2 -
+2|x_1||x_2|cos\Theta$ which implies $1 = -cos\Theta$ and thus
+$\Theta = \pi$
 
-But if the angle between $-x_1$ and $x_2$ is $\pi$  then the angle between $x_1$ and $x_2$ is $0$.
-Therefore since $x_1, x_2 \neq 0$, we can conclude $x_2 = c_1x_1$, where $c_1 \geq 0$, $c_1 \in \mathbb{R}$.
+But if the angle between $-x_1$ and $x_2$ is $\pi$  then the angle
+between $x_1$ and $x_2$ is $0$. Therefore since $x_1, x_2 \neq 0$,
+we can conclude $x_2 = c_2x_1$, where $c_2 > 0$, $c_2 \in
+\mathbb{R}$.
 
 
 Inductive step:
-Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
+Assume that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ implies $\forall\ 1 \leq i \leq n-1\ \exists\ c_i \geq 0$
+such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}$(where $c_1 = 1$).  Additionally, assume $|\sum_{i = 1}^{n} x_i| = \sum_{i = 1}^{n}| x_i|$.
 
 First, we want to be able to show that $|\sum_{i = 1}^{n-1} x_i| = \sum_{i = 1}^{n-1}| x_i|$ so we can use the inductive hypothesis.
 By the triangle inequality we have
 $$|\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
 
-and thus 
+and thus
 
 $$ \sum_{i = 1}^{n}| x_i| = |\sum_{i = 1}^{n} x_i|  \leq |\sum_{i = 1}^{n-1} x_i| + | x_n|$$
 
-which implies 
+which implies
 
 $$ \sum_{i = 1}^{n-1}| x_i| \leq |\sum_{i = 1}^{n-1} x_i|.$$
 
@@ -286,38 +317,48 @@ $$\sum_{i = 1}^{n-1}| x_i| = |\sum_{i = 1}^{n-1} x_i|$$
 
 and thus by assumption $\forall\ 1 \leq i \leq n-1\ \exists\ c_i$ such that $x_i = c_ix_1$ and $c_i \in \mathbb{R}_{\geq 0}$ (where $c_1 = 1, x_1 \neq 0$).
 
-Therefore 
+Therefore
 $$|\sum_{i = 1}^{n} x_i| = |(\sum_{i = 1}^{n-1} c_ix_1) + x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$$
 and
 $$\sum_{i = 1}^{n}| x_i| = \sum_{i = 1}^{n-1}| x_i| + |x_n| = |\sum_{i = 1}^{n-1} x_i| + |x_n| = |(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| $$.
 
-But we know by the base case that 
+But we know by the base case that
 $|(\sum_{i = 1}^{n-1}c_i )x_1| + |x_n| = |(\sum_{i = 1}^{n-1} c_i)x_1 + x_n|$
 implies that $\exists k \in \mathbb{R}_{\geq 0}$ such that $x_n = k((\sum_{i = 1}^{n-1} c_i)x_1)$.
 Let $c_n = k(\sum_{i = 1}^{n-1} c_i)$.
 Since $c_1, c_2 \ldots c_{n-1}, k \geq 0$ and are elements of $\mathbb{R}$, we know $c_n \in \mathbb{R}_{\geq 0}$.
 
-Therefore $\exists c_n \in \mathbb{R}_{\geq 0}$ such that $x_n = c_n x_1$ and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i \in \mathbb{R}_{\geq 0}$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
+Therefore $\exists c_n \in \mathbb{R}_{\geq 0}$ such that $x_n = c_n
+x_1$, and thus we have shown $\forall\ 1 \leq i \leq n\ \exists\ c_i
+\in \mathbb{R}_{\geq 0}$ such that $x_i = c_ix_1$ (where $c_1 = 1$).
 
 
 \end{proof}
 
 %\todo{need new page}
-\newpage 
+\newpage
 
 \begin{theorem}[Theorem 5.18 pg. 298 \cite{friedberg2003linear}]\label{theorem518}
-Let $A \in M_{n \times n} (C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $| \lambda | = \rho(A)$.
-Then $\lambda = \rho(A)$ and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \in C^n$ is the column vector in which each coordinate equals $1$.
+Let $A \in M_{n \times n} (\mathbb{R})$ be a matrix in which each
+entry is positive and let $\lambda \in \mathbb{C}$ be an eigenvalue
+of $A$ such that $| \lambda | = \rho(A)$. Then $\lambda = \rho(A)$
+and $\{ u \}$ is a basis for $E_{\lambda}$, where $u \in
+\mathbb{C}^n$ is the column vector in which each coordinate equals
+$1$.
 
 \end{theorem}
 
 \begin{proof}
 
-First we want to show that $\{ u \}$ is a basis for $E_{\lambda}$.
-To show this, we are going to use the fact that $|\lambda| = \rho(A)$ to derive several equalities giving us information about $A$.
+First we want to show that $\{ u \}$ is a basis for $E_{\lambda}$,
+considered as a subspace of $\mathbb{C}^n$. To show this, we are
+going to use the fact that $|\lambda| = \rho(A)$ to derive several
+equalities giving us information about $A$.
 
-Let $v$ be an eigenvector of $A$ corresponding to $\lambda$ with coordinates $v_1, v_2, \ldots, v_n$.  
-Now choose $k$ such that $v_k$ is the coordinate of $v$ with the largest absolute value and let $b = |v_k|$.
+Let $v \in \mathbb{C}^n$ be an eigenvector of $A$ corresponding to
+$\lambda$ with coordinates $v_1, v_2, \ldots, v_n$. Now choose $k$
+such that $v_k$ is the coordinate of $v$ with the largest absolute
+value and let $b = |v_k|$.
 
 Then $$ |\lambda|\ b =\ |\lambda|\ |v_k| = |\lambda v_k| $$
 
@@ -326,11 +367,14 @@ Thus
 
 $$ |\lambda v_k| = | \sum_{j = 1}^n A_{kj}v_j | $$
 
-By the triangle inequality and then absolute value multiplication rules,
+By the triangle inequality and the absolute value multiplication
+rules,
 
 $$ | \sum_{j = 1}^n A_{kj}v_j | \leq \sum_{j=1}^n |A_{kj}v_j| = \sum_{j=1}^n |A_{kj}| |v_j| $$
 
-Since we know $b = |v_k| \geq v_j\ \forall\ 1 \leq j \leq n$ and similarly $\rho(A) \geq  \rho_i(A)\ \forall\ 1 \leq i \leq n $, we know 
+Since we know $b = |v_k| \geq |v_j| \ \forall\ 1 \leq j \leq n$ and
+similarly $\rho(A) \geq  \rho_i(A)\ \forall\ 1 \leq i \leq n $, we
+know
 
 $$ \sum_{j=1}^n |A_{kj}| |v_j|  \leq \sum_{j=1}^n |A_{kj}| b = b \sum_{j=1}^n |A_{kj}| =  b\rho_k(A) = \rho_k(A)b \leq \rho(A)b $$
 
@@ -339,31 +383,35 @@ But since we know $|\lambda| = \rho(A)$, we know the three inequalities used abo
 
 \begin{enumerate}
 
-	\item $$| \sum_{j = 1}^n A_{kj}v_j | = \sum_{j=1}^n |A_{kj}v_j|$$
+    \item $$| \sum_{j = 1}^n A_{kj}v_j | = \sum_{j=1}^n |A_{kj}v_j|$$
 
-	\item $$\sum_{j=1}^n |A_{kj}| |v_j|  = \sum_{j=1}^n |A_{kj}| b$$
+    \item $$\sum_{j=1}^n |A_{kj}| |v_j|  = \sum_{j=1}^n |A_{kj}| b$$
 
-	\item $$\rho_k(A)b = \rho(A)b$$ \newline
+    \item $$\rho_k(A)b = \rho(A)b$$ \newline
 
 \end{enumerate}
 
 
-But now we can use this to show that $\{ u \}$ is a basis for $E_{\lambda}$.
-By lemma \ref{section615b}, we know $(1)$ above holds if and only if $A_{kj}v_j$ are nonnegative multiples of eachother.
-Without loss of generality, we can assume they are multiples of a complex number $|z| = 1$ by adjusting the constants $c_i \ldots c_n$.
-Then $\exists c_1, c_2, \ldots c_n$ such that $A_{kj}v_j = c_j z$.
-Since $A_{kj} > 0$, we can say $v_j = \frac{c_jz}{A_{kj}}$.
+But now we can use this to show that $\{ u \}$ is a basis for
+$E_{\lambda}$. By lemma \ref{section615b}, we know $(1)$ above holds
+if and only if $A_{kj}v_j$ are nonnegative multiples of each other.
+Without loss of generality, we can assume they are multiples of a
+complex number $z$ with $|z| = 1$ by adjusting the constants $c_1
+\ldots c_n$. Then $\exists c_1, c_2, \ldots c_n \in \mathbb{R}_{\geq
+0}$ such that $A_{kj}v_j = c_j z$. Since $A_{kj} > 0$, we can say
+$v_j = \frac{c_jz}{A_{kj}}$.
 
-By $(2)$ above, we know $\forall  1 \leq j \leq n\ , |v_j| = b$ and therefore
+By $(2)$ above, using again $A_{kj} > 0$, we know $\forall  1 \leq j
+\leq n\ , |v_j| = b$ and therefore
 
 $$b = |v_j| = |\frac{c_jz}{A_{kj}}|$$
 
-But $A_{kj} > 0$ by assumption and $c_j$ is nonnegative.  
+But $A_{kj} > 0$ by assumption and $c_j$ is nonnegative.
 Thus
 
 $$ b = |\frac{c_jz}{A_{kj}}| = |\frac{c_j}{A_{kj}}||z| = |\frac{c_j}{A_{kj}}|*1 = \frac{c_j}{A_{kj}} \ \forall 1 \leq j \leq n$$
 
-Since $v_j = \frac{c_jz}{A_{kj}}$, this gives us $v_j = bz\ \forall j$ and thus 
+Since $v_j = \frac{c_jz}{A_{kj}}$, this gives us $v_j = bz\ \forall j$ and thus
 
 
 \begin{equation}
@@ -373,19 +421,22 @@ Since $v_j = \frac{c_jz}{A_{kj}}$, this gives us $v_j = bz\ \forall j$ and thus
            \vdots \\
            v_{n}
          \end{bmatrix}
-     	= \begin{bmatrix}
+        = \begin{bmatrix}
            bz \\
            bz \\
            \vdots \\
            bz
          \end{bmatrix}
-        = bzu 
+        = bzu
 \end{equation}
 
-Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be expressed as a scalar multiple of $u$ and thus $\{ u \}$ is a basis for $E_{\lambda}$ and an eigenvector of $A$.
+Thus any eigenvector $v$ of $A$ corresponding to $\lambda$ can be
+expressed as a scalar multiple of $u$, and thus $\{ u \}$ is a basis
+for $E_{\lambda}$, and $u$ is an eigenvector of $A$.
 
 
-Now note that because $A$ has all positive values and $u$ has all positive values, then $Au$ has all positive values. Therefore, because  $\lambda u = Au$, $\lambda u$ has all positive values.
+Now note that because $A$ has all positive values and $u$ has all positive values, then $Au$ has all positive values.
+Therefore, because  $\lambda u = Au$, $\lambda u$ has all positive values.
 Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\lambda = |\lambda| = \rho(A)$.
 
 
@@ -393,22 +444,24 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 
 \begin{corollary}[Corollary 1 pg. 299 \cite{friedberg2003linear} ]\label{cor5181}
 
-	Let $A \in M_{n \times n}(C)$ be a matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
-	Then  $\lambda = \nu(A)$ and $E_{\lambda}$ has dimension 1. \newline
+    Let $A \in M_{n \times n}(\mathbb{R})$ be a matrix in which each entry is positive and let $\lambda \in \mathbb{C}$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$.
+    Then  $\lambda = \nu(A)$ and $E_{\lambda}$ has dimension 1. \newline
 
 \end{corollary}
 
 \begin{proof}
 
-	Consider $A^t$ and let $E_{\lambda},\ E_{\lambda}\textprime$ be the eigenspaces of $\lambda$ corresponding to $A,\ A^t$ respectively.
-	We know by lemma \ref{exercise5114} that $A$ and $A^t$ have the same eigenvalues.
-	Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
+    Consider $A^t$ and let $E_{\lambda},\ E_{\lambda}\textprime$ be the eigenspaces of $\lambda$ corresponding to $A,\ A^t$ respectively.
+    We know by lemma \ref{exercise5114} that $A$ and $A^t$ have the same eigenvalues.
+    Thus $A^t$ is a matrix in which each entry is positive and has eigenvalue $\lambda$.
 
-	Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.  Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $|\lambda| = \rho(A^t)$ and by Theorem \ref{theorem518}, the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
-	
-	Then $dim(E_{\lambda}\textprime) = 1$ and by lemma \ref{exercise5213} , we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
-	
-	Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
+    Now notice that because the columns of $A$ are the rows of $A^t$ we know $\nu(A) = \rho(A^t)$ and thus $|\lambda| = \rho(A^t)$.
+    Thus $A^t$ is a matrix with all positive entries and with an eigenvalue $\lambda$ satisfying $|\lambda| = \rho(A^t)$, and by Theorem \ref{theorem518},
+    the basis of $E_{\lambda}\textprime = \{ u \}$ and $\lambda = \rho(A^t) = \nu(A)$.
+
+    Then $dim(E_{\lambda}\textprime) = 1$ and by lemma \ref{exercise5213} , we know $dim(E_{\lambda}) = dim(E_{\lambda}\textprime) = 1$.
+
+    Thus, we have shown $\lambda = \nu(A)$ and $dim(E_{\lambda}) = 1$.
 
 \end{proof}
 
@@ -416,37 +469,41 @@ Since $u$ has each coordinate as $1$, we can conclude $\lambda > 0$ and thus $\l
 
 \begin{corollary}[Corollary 2 pg. 299 \cite{friedberg2003linear}]\label{cor5182}
 
-	Let $A \in M_{n \times n}(C)$ be a transition matrix in which each entry is positive and let $\lambda$ be an eigenvalue of $A$ such that $\lambda \neq 1$.
-	Then  $|\lambda| < 1$ and the eigenspace corresponding to the eigenvalue $1$ has dimension $1$.
+    Let $A \in M_{n \times n}(\mathbb{R})$ be a transition matrix in which each entry is positive, and let $\lambda \in \mathbb{C}$
+    be an eigenvalue of $A$ such that $\lambda \neq 1$.
+    Then  $|\lambda| < 1$, and the eigenspace corresponding to the eigenvalue $1$ has dimension $1$.
 
 \end{corollary}
 
 \begin{proof}
-	We know by Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
-	Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
-	Suppose $|\lambda| = 1$.
-	We know by definition of a transition matrix that the sum of each column of $A$ is 1 or in other words $\nu(A) = 1$ and thus $|\lambda| = \nu(A) = 1$.
-	But this means by corollary \ref{cor5181} that $\lambda = \nu(A) = 1$.
-	By contraposition $\lambda \neq 1$ implies $|\lambda| \neq  1$ and thus $\lambda \neq 1$ implies $|\lambda| <  1$ .
+    We know by Theorem \ref{theorem516} that if $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+    Thus if $|\lambda| \neq 1$, then $|\lambda| < 1$.
+    Suppose $|\lambda| = 1$.
+    We know by definition of a transition matrix that the sum of each column of $A$ is 1. In other words $\nu_i(A)=
+    1$ for all $1 \leq i \leq n$. Hence $\nu(A) = 1$, and thus $|\lambda| = \nu(A) = 1$.
+    But this means by corollary \ref{cor5181} that $\lambda = \nu(A) = 1$.
+    By contraposition $\lambda \neq 1$ implies $|\lambda| \neq  1$ and thus $\lambda \neq 1$ implies $|\lambda| <  1$ .
 
-	If $A$ is a transition matrix, then by Theorem \ref{theorem517} we know that $1$ is an eigenvalue. 
-	We also know that if $A$ is a transition matrix, then given $u$ as a column vector in which each coordinate equals 1, then $A^tu = u$.
+    Since $A$ is a transition matrix, then by Theorem \ref{theorem517} we know that $1$ is an
+    eigenvalue of $A$. Therefore we have an all-positive-entry matrix $A$ with eigenvalue $1 =
+    \nu(A)$, and thus by the previous corollary, we know $dim(E_1) =
+    1$.
 
-	Because $\forall i\ u_i = 1$, we know
-	 $$1 = u_i = \sum_{j = 1}^nA^t_{ij}u_j = \sum_{j = 1}^nA^t_{ij}(1) =  \sum_{j = 1}^nA^t_{ij} = \rho_i(A^t) = \nu_i(A)$$
+   % We also know that if $A$ is a transition matrix, then given $u$ as a column vector in which each coordinate equals 1, then $A^tu = u$.
 
-	Then $\forall i\ \nu_i(A) = 1$ and thus $\nu(A) = 1$.
-	Therefore we have an all-positive-entry matrix with $1 = \lambda = \nu(A) $ and thus by the previous corollary, we know $dim(E_{\lambda}) = 1$.
+    % Because $\forall i\ u_i = 1$, we know
+    % $$1 = u_i = \sum_{j = 1}^nA^t_{ij}u_j = \sum_{j = 1}^nA^t_{ij}(1) =  \sum_{j = 1}^nA^t_{ij} = \rho_i(A^t) = \nu_i(A)$$
 
+    % Then $\forall i\ \nu_i(A) = 1$ and thus $\nu(A) = 1$.
 
 \end{proof}
 
 \begin{theorem}[Theorem 5.19 pg. 298]\label{theorem519}
-Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then 
+Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$.  Then
 
 \begin{enumerate}
-	\item $|\lambda| \leq 1$
-	\item If $|\lambda| = 1$, then $\lambda = 1$ and $dim(E_{\lambda}) = 1$.
+    \item $|\lambda| \leq 1$
+    \item If $|\lambda| = 1$, then $\lambda = 1$ and $dim(E_{\lambda}) = 1$.
 
 \end{enumerate}
 
@@ -454,30 +511,33 @@ Let $A$ be a regular transition matrix and let $\lambda$ be an eigenvalue of $A$
 
 \begin{proof}
 
-We know $(1)$ was proved in Corollary 3 of Theorem \ref{theorem516}.
+We know $(1)$ by Theorem \ref{theorem516}.
 
 Since $A$ is regular, we know by definition $\exists s \in \mathbb{N}_{>0}$ such that $A^s$ has only positive entries.
 Moreover $A^s$ and $A^{s+1}$ are transition matrices because $A$ is a transition matrix and the product of transition matrices is a transition matrix.
 We now split this proof into parts:
 
 \begin{enumerate}
-	\item 
-		Because $A$ is a transition matrix and the entries of $A^s$ are positive, we know the entries of $A^{s+1} = A^s(A)$ are positive.
-		More specifically,
-		$$A^{s+1}_{ij} = \sum_{k = 1}^nA^s_{ik}A_{kj}$$
-		and thus because for any given $i, j$, $\forall\ 1 \leq k \leq n\ A_{kj} \geq 0$ and $A^s_{ik} > 0$ and $\exists\ k$ such that $A_{kj}  > 0$ (since the column sums to $1$), we can conclude $A^{s+1}_{ij} > 0$.
+    \item
+        Because $A$ is a transition matrix and the entries of $A^s$ are positive, we know the entries of $A^{s+1} = A^s(A)$ are positive.
+        More specifically,
+        $$A^{s+1}_{ij} = \sum_{k = 1}^nA^s_{ik}A_{kj}$$
+        and thus because for any given $i, j$, $\forall\ 1 \leq k \leq n\ A_{kj} \geq 0$ and $A^s_{ik} > 0$
+        and $\exists\ k$ such that $A_{kj}  > 0$ (since the column sums to $1$), we can conclude $A^{s+1}_{ij} > 0$.
 
-	\item 
-		Suppose $|\lambda| = 1$, then we know by lemma \ref{exercise5115} that if $\lambda$ is a eigenvalue of $A$, then $\lambda^s$, $\lambda^{s+1}$ are eigenvalues of $A^s$, $A^{s+1}$ respectively.  Because $|\lambda| = 1$, we know $ |\lambda^s |= |\lambda^{s+1} |= |\lambda| = 1$.
+    \item
+        Suppose $|\lambda| = 1$, then we know by lemma \ref{exercise5115} that if $\lambda$ is an eigenvalue of $A$, then
+        $\lambda^s$, $\lambda^{s+1}$ are eigenvalues of $A^s$, $A^{s+1}$ respectively.  Because $|\lambda| = 1$, we know $ |\lambda^s |= |\lambda^{s+1} |= |\lambda| = 1$.
 
-	\item
-		Because each entry of $A^s$, $A^{s+1}$ is positive and both matrices are transition matrices, we know by corollary \ref{cor5182} that for any eigenvalues $\lambda*$ of $A^s$, $A^{s+1}$ such that $\lambda* \neq 1$, then $|\lambda| < 1$.
-		Thus because $|\lambda^s |= |\lambda^{s+1} |= 1 $, we can conclude $\lambda^s = \lambda^{s+1} = 1$ and therefore $\lambda = 1$.
-	\item 
+    \item
+        Because each entry of $A^s$, $A^{s+1}$ is positive and both matrices are transition matrices,
+        we know by corollary \ref{cor5182} that for any eigenvalues $\lambda*$ of $A^s$, $A^{s+1}$ such that $\lambda* \neq 1$, then $|\lambda*| < 1$.
+        Thus because $|\lambda^s |= |\lambda^{s+1} |= 1 $, we can conclude $\lambda^s = \lambda^{s+1} = 1$ and therefore $\lambda = 1$.
+    \item
 
-		Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
-		Then by lemma \ref{exercise5115} $E_{\lambda} \subseteq E_{\lambda}\textprime$.
-		But then by corollary \ref{cor5182} we know $dim(E_{\lambda}\textprime) = 1$, and thus $dim(E_{\lambda}) = 1$.
+        Let $E_{\lambda}$ and $E_{\lambda}\textprime$ be the eigenspaces of $A$, $A^{s+1}$ respectively corresponding to $\lambda = 1$.
+        Then by lemma \ref{exercise5115} $E_{\lambda} \subseteq E_{\lambda}\textprime$.
+        But then by corollary \ref{cor5182} we know $dim(E_{\lambda}\textprime) = 1$, and thus $dim(E_{\lambda}) = 1$.
 \end{enumerate}
 
 \end{proof}
@@ -491,7 +551,9 @@ Then $\lim_{m \to \infty} A^m$ exists.
 
 \begin{proof}
 
-We know by Theorem \ref{theorem514} that if $A \in M_{n \times n}(C)$ is diagonalizable and has every eigenvalue contained in $S$, then $\lim_{m \to \infty} A^m$ exists.
+We know by Theorem \ref{theorem514} that if $A \in M_{n \times
+n}(\mathbb{C})$ is diagonalizable and has every eigenvalue contained
+in $S$, then $\lim_{m \to \infty} A^m$ exists.
 
 
 Thus because $A$ is diagonalizable by assumption, we just need to show for all eigenvalues $\lambda$ of $A$, $\lambda \in S$.
@@ -502,7 +564,8 @@ Thus we can conclude that $\lim_{m \to \infty} A^m$ exists.
 
 
 
-The following lemmas use Jordan Canonical form to prove Theorem \ref{theorem520}.
+The following lemmas use Jordan Canonical Form to prove Theorem
+\ref{theorem520}.
 
 \begin{definition}
 For any $A \in M_{n \times n}(\mathbb{C})$, define the norm of $A$ by
@@ -518,30 +581,31 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 
 \begin{proof}
-	By definition $||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \}$.
-	Next, we know that $|(AB)_{ij}|  = |\sum_{k = 1}^nA_{ik}B_{kj}|$ and 
-	$\forall\ i, j, k\ A_{ik} \leq ||A||,  B_{kj} \leq ||B||$.
-	Thus all together 
-	$$ ||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \} = max \{|\sum_{k = 1}^nA_{ik}B_{kj}|\ \forall\ i, j \} \leq \sum_{k = 1}^n||A||||B||| \leq n||A||||B||$$
-	Thus we can conclude $||AB|| \leq n||A||||B||$.
+    By definition $||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \}$.
+    Next, we know that $|(AB)_{ij}|  = |\sum_{k = 1}^nA_{ik}B_{kj}|$ and
+    $\forall\ i, j, k\ |A_{ik}| \leq ||A||,  |B_{kj}| \leq ||B||$.
+    Thus all together
+    $$ ||AB|| = max \{|(AB)_{ij}|\ \forall\ i, j \} = max \{|\sum_{k = 1}^nA_{ik}B_{kj}|\ \forall\ i, j \} \leq \sum_{k = 1}^n||A||||B||| = n||A||||B||$$
+    Thus we can conclude $||AB|| \leq n||A||||B||$.
 
 \end{proof}
 
 \begin{lemma}[Modified Exercise 21 of Section 7.2 \cite{friedberg2003linear}]\label{exericse7221}
-	Let $A \in M_{n \times n}(C)$ be a transition matrix.
-	Since $C$ is an algebraically closed field, $A$ has a Jordan canonical form $J$ to which $A$ is similar.
-	Let $P$ be an invertible matrix such that $P^{-1}AP\ =\ J$.
-	Then we have the following:
+    Let $A \in M_{n \times n}(\mathbb{R})$ be a transition matrix.
+    Since $\mathbb{C}$ is an algebraically closed field, $A$ has a Jordan canonical form $J$ to which $A$ is
+    similar in $M_{n \times n}(\mathbb{C})$.
+    Let $P \in M_{n \times n}(\mathbb{C})$ be an invertible matrix such that $P^{-1}AP\ =\ J$.
+    Then we have the following:
 
-	\begin{enumerate}
-		
-		\item $||A^m|| \leq 1$ for every positive integer $m$.
-		\item $\exists c > 0$ such that $||J^m|| \leq c$ for every positive integer $m$.
-		\item Each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
-		%\item $lim_{m \to \infty}A^m$ exists if and only if $1$ is the only eigenvalue of $A$ with absolute value $1$.
-		%\item 
+    \begin{enumerate}
 
-	\end{enumerate}
+        \item $||A^m|| \leq 1$ for every positive integer $m$.
+        \item $\exists c > 0$ such that $||J^m|| \leq c$ for every positive integer $m$.
+        \item Each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
+        %\item $lim_{m \to \infty}A^m$ exists if and only if $1$ is the only eigenvalue of $A$ with absolute value $1$.
+        %\item
+
+    \end{enumerate}
 
 \end{lemma}
 
@@ -550,27 +614,30 @@ Then $||AB|| \leq n ||A|| ||B||$.
 \begin{enumerate}
 
 
-	\item 
-		If $A$ is a transition matrix, then every column sums to $1$ and every $A_{ij} \geq 0$.
-		Thus $\forall\ i, j\ 0 \leq A_{ij} \leq 1$ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq 1$.
+    \item
+        If $A$ is a transition matrix, then every column sums to $1$ and every $A_{ij} \geq 0$.
+        Thus $\forall\ i, j\ 0 \leq A_{ij} \leq 1$ and thus $ max \{|A_{ij}|\ \forall\ i, j \} = ||A|| \leq
+        1$. The same applies to $A^m$ for any $m \in \mathbb{N}$
+        since $A^m$ is also a transition matrix.
 
 
-	\item
-		If $J = P^{-1}AP$, then $J^m  = P^{-1}A^mP$ and $||J^m|| = || P^{-1}A^mP ||$
-		By lemma \ref{exercise7220} we have that $|| P^{-1}A^mP || \leq n||P^{-1}||||A^mP|| \leq n^2 ||P^{-1}|| ||A^m||| |P||$.
-		But we know by (1) that $||A^m|| \leq 1$.
-		Thus 
-		$$ |J^m|| \leq || P^{-1}A^mP || \leq n^2 ||P^{-1}|| ||A^m||| |P|| \leq n^2 ||P^{-1}|| |P||$$
+    \item
+        If $J = P^{-1}AP$, then $J^m  = P^{-1}A^mP$ and $||J^m|| = || P^{-1}A^mP
+        ||$.
+        By lemma \ref{exercise7220} we have that $|| P^{-1}A^mP || \leq n||P^{-1}||||A^mP|| \leq n^2 ||P^{-1}|| ||A^m||| |P||$.
+        But we know by (1) that $||A^m|| \leq 1$.
+        Thus
+        $$ |J^m|| \leq || P^{-1}A^mP || \leq n^2 ||P^{-1}|| ||A^m||| |P|| \leq n^2 ||P^{-1}|| |P||$$
 
-		But since $P, P^{-1}$ are fixed, $||P||, ||P^{-1}||$ are constant and thus we have a constant $c = n^2 ||P^{-1}|| ||P||$ such that $||J^m|| \leq c\ \forall m \in \mathbb{Z}_{>0}$
+        But since $P, P^{-1}$ are fixed, $||P||, ||P^{-1}||$ are constant and thus we have a constant $c = n^2 ||P^{-1}|| ||P||$ such that $||J^m|| \leq c\ \forall m \in \mathbb{Z}_{>0}$
 
-		
-	\item \label{jordan1size}
-		By way of contradiction, suppose there exists a  Jordan block of $J_{n_i}(\lambda)$ in $J$ corresponding to $\lambda = 1$ of size $n_i \times n_i$ where $n_i \neq 1$ (which implies $n_i \geq 2)$.
-		But we know by lemma \ref{jordanblockexp} for $n_i \geq 2$ that $(J_{n_i}(\lambda))^{m}_{12} = \ell \lambda^{m -1} = m * 1 = m$.
-		But $(J_{n_i}(\lambda))^{m}_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
 
-		Thus $J_1$ is a $1 \times 1 $ matrix.
+    \item \label{jordan1size}
+        By way of contradiction, suppose there exists a  Jordan block of $J_{n_i}(\lambda)$ in $J$ corresponding to $\lambda = 1$ of size $n_i \times n_i$ where $n_i \neq 1$ (which implies $n_i \geq 2)$.
+        But we know by lemma \ref{jordanblockexp} for $n_i \geq 2$ that $(J_{n_i}(\lambda))^{m}_{12} = m \lambda^{m -1} = m * 1 = m$.
+        But $(J_{n_i}(\lambda))^{m}_{12}$ is an element of $J^m$ and thus $||J^m||$ is not bounded, a contradiction!
+
+        Thus $J_{n_i}(\lambda) = J_1(1)$ is a $1 \times 1 $ matrix.
 
 
 
@@ -583,18 +650,18 @@ Then $||AB|| \leq n ||A|| ||B||$.
 
 Let $A$ be an $n \times n$ regular transition matrix. Then:
 
-\begin{enumerate} 
+\begin{enumerate}
 
 
-	\item $\lim_{m \to \infty} A^m$ exists.
+    \item $\lim_{m \to \infty} A^m$ exists.
 
-	\item $L = \lim_{m \to \infty} A^m$ is a transition matrix.
+    \item $L = \lim_{m \to \infty} A^m$ is a transition matrix.
 
-	\item $LA = AL = L$.
+    \item $LA = AL = L$.
 
-	\item The columns of $L$ are identical and equal to the unique probability vector $v$ that is equal to eigenvector corresponding to the eigenvalue $1$.
+    \item The columns of $L$ are identical and equal to the unique probability vector $v$ that is an eigenvector corresponding to the eigenvalue $1$.
 
-	\item For any probability vector $w$, $\lim_{m \to \infty} A^m w = v$.
+    \item For any probability vector $w$, $\lim_{m \to \infty} A^m w = v$.
 
 \end{enumerate}
 
@@ -605,65 +672,69 @@ Let $A$ be an $n \times n$ regular transition matrix. Then:
 
 \begin{enumerate}
 
-	\item \label{20b}
+    \item \label{20b}
 
-		By lemma \ref{exericse7221}, since $A \in M_{n \times n}(\mathbb{C})$ and $A$ a is transition matrix we know $A$ has a Jordan Canonical form $J$ to which $A$ is similar and that each Jordan block of $J$ corresponding to eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
+        By lemma \ref{exericse7221}, since $A \in M_{n \times n}(\mathbb{R})$ is transition matrix, we know $A$ has
+        a Jordan Canonical Form $J$ to which $A$ is similar such that each Jordan block of $J$ corresponding to the eigenvalue $\lambda = 1$ is a $1 \times 1$ matrix.
 
-		Additionally, by Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
+        Additionally, by Theorem \ref{theorem519}, we know all eigenvalues $\lambda$ of $A$ are contained in $S$.
 
-		Thus, by Theorem \ref{benstheorem1}, we know that $\lim_{m \to \infty} A^m$ exists.
-	
-			
-
-	\item \label{20c}{}
-			By Theorem \ref{theorem515} , we know $L$ is a transition matrix if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
-			But due to transposition rules, we can equivalently say  $u^tL = u^t$.
-			But 
-			$$u^tL = u^t \lim_{m \to \infty} A^m = \lim_{m \to \infty} u^t A^m$$
-
-			But $A^m$ is a transition matrix which means $\forall m\ u^t A^m = u^t$ and thus
-			$$\lim_{m \to \infty} u^t A^m = \lim_{m \to \infty} u^t = u^t $$
-
-			Thus $L$ is a transition matrix.
+        Thus, by Theorem \ref{benstheorem1}, we know that $\lim_{m \to \infty} A^m$ exists.
 
 
-	\item \label{20d}
 
-			By Theorem \ref{theorem512} \cite{friedberg2003linear}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
+    \item \label{20c}{}
+            By Remark \ref{theorem515} , we know $L$ is a transition matrix if and only if $L^tu = u$, where $u$ is the column vector where every entry is equal to $1$.
+            But due to transposition rules, we can equivalently say  $u^tL = u^t$.
+            But
+            $$u^tL = u^t \lim_{m \to \infty} A^m = \lim_{m \to \infty} u^t A^m$$
 
-			But $\lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^{m} = L$.
+            But $A^m$ is a transition matrix which means $\forall m\ u^t A^m = u^t$ and thus
+            $$\lim_{m \to \infty} u^t A^m = \lim_{m \to \infty} u^t = u^t $$
 
-			Thus $LA = AL = L$.
+            Thus $L$ is a transition matrix.
 
 
-	\item \label{20e}
+    \item \label{20d}
 
-			We know $AL = L$ by item \ref{20d}.
-			Let $L_i$ be the $ith$ column vector of $L$.
-			Then because $AL = L$, we know $AL_i = L_i \forall 1 \leq i \leq n$.
-			Thus $L_i$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda = 1$.
-			Additionally, because $L$ is a transition matrix by item \ref{20c} we know $L_i$ is a probability vector.
+            By Theorem \ref{theorem512}, we know $AL = \lim_{m \to \infty} A A^m = \lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^mA  = LA$.
 
-			By way of contradiction assume there exists two distinct eigenvectors $v_1, v_2$ corresponding to eigenvalue $\lambda = 1$ that are probability vectors.
-			By Theorem \ref{theorem519}, we know that $dim(E_{\lambda}) =1$ and thus $v_1$, $v_2$ must be multiples of eachother.
-			Thus $\exists c \neq 1 \in \mathbb{C}$ such that $v_2 = cv_1$.
-			But if the sum of the values of $v_1$ is equal to $1$, then the sum of the values of $v_2$ is equal to $c* 1 \neq 1$ and $v_2$ is not a probability vector, a contradiction.
+            But $\lim_{m \to \infty} A^{m+1} = \lim_{m \to \infty} A^{m} = L$.
 
-			Thus there is a unique eigenvector $v$ corresponding to $\lambda = 1$ that is a probability vector and $\forall 1 \leq i \leq n L_i = v$.
+            Thus $LA = AL = L$.
 
-	\item \label{20f}
-		Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
-		We want to show $y = v$.
-		
-		If $y = Lw$, then by the corollary to Theorem \ref{theorem515} , we know $y$ is a probability vector.
-		Additionally,
-		$$Ay = A(Lw) = (AL)w = Lw$$
-		by item \ref{20d}.
-		But $Lw = y$ and thus $Ay = y$.
 
-		Therefore $y$ is an probability vector and eigenvector of $A$ corresponding to $\lambda = 1$
-		But $v$ is the unique probability vector and eigenvector of $A$ corresponding to $\lambda = 1$ and thus $y = v$.
-		Thus $\lim_{m \to \infty} A^m w = v$.
+    \item \label{20e}
+
+            We know $AL = L$ by item \ref{20d}.
+            Let $L_i$ be the $ith$ column vector of $L$.
+            Then because $AL = L$, we know $AL_i = L_i \forall 1 \leq i \leq n$.
+            Thus $L_i$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda = 1$.
+            Additionally, because $L$ is a transition matrix by item \ref{20c} we know $L_i$ is a probability vector.
+
+            By way of contradiction assume there exists two distinct eigenvectors $v_1, v_2$ corresponding to eigenvalue $\lambda = 1$ that are probability vectors.
+            By Theorem \ref{theorem519}, we know that $dim(E_{\lambda}) =1$ and thus $v_1$, $v_2$ must be multiples of eachother.
+            Thus $\exists c \neq 1 \in \mathbb{C}$ such that $v_2 = cv_1$.
+            But if the sum of the coordinates of $v_1$ is equal to $1$, then the sum of the coordinates of
+            $v_2$ is equal to $c* 1 \neq 1$ and $v_2$ is not a probability vector, a contradiction.
+
+            Thus there is a unique eigenvector $v$ corresponding to $\lambda = 1$ that is a probability vector, and $L_i =
+            v$  $\forall 1 \leq i \leq n$.
+
+    \item \label{20f}
+        Let $w$ be any probability vector and $y = \lim_{m \to \infty} A^m w  = Lw$.
+        We want to show $y = v$.
+
+        If $y = Lw$, then by item 2 and Remark \ref{theorem515} , we know $y$ is a probability vector.
+        Additionally,
+        $$Ay = A(Lw) = (AL)w = Lw$$
+        by item \ref{20d}.
+        But $Lw = y$ and thus $Ay = y$.
+
+        Therefore $y$ is a probability vector and an eigenvector of $A$ corresponding to $\lambda =
+        1$.
+        But $v$ is the unique probability vector which is an eigenvector of $A$ corresponding to $\lambda = 1$, and thus $y = v$.
+        Thus $\lim_{m \to \infty} A^m w = v$.
 
 
 \end{enumerate}
@@ -681,10 +752,10 @@ The vector $v$ in Theorem \ref{theorem520}(5) is called the \textbf{fixed probab
 The following is an example 4 of section 5.3 from \cite{friedberg2003linear}.
 
 \begin{displayquote}
-	A survey in Persia showed that on a particular day 50\% of the Persians preferred a loaf of bread, 30\% preferred a jug of wine, and 20\% preferred "thou beside me in the wilderness." 
-	A subsequent survey 1 month later yielded the following data: Of those who preferred a loaf of bread on the first survey, 40\% continued to prefer a loaf of bread, 10\% now preferred a jug of wine, and 50\% preferred "thou"; of those who preferred a jug of wine on the first survey, 20\% now preferred a loaf of bread, 70\% continued to prefer a jug of wine, and 10\% now preferred "thou"; of those who preferred "thou" on the first survey, 20\% now preferred a loaf of bread, 20\% now preferred a jug of wine, and 60\% continued to prefer "thou."
+    A survey in Persia showed that on a particular day 50\% of the Persians preferred a loaf of bread, 30\% preferred a jug of wine, and 20\% preferred "thou beside me in the wilderness."
+    A subsequent survey 1 month later yielded the following data: Of those who preferred a loaf of bread on the first survey, 40\% continued to prefer a loaf of bread, 10\% now preferred a jug of wine, and 50\% preferred "thou"; of those who preferred a jug of wine on the first survey, 20\% now preferred a loaf of bread, 70\% continued to prefer a jug of wine, and 10\% now preferred "thou"; of those who preferred "thou" on the first survey, 20\% now preferred a loaf of bread, 20\% now preferred a jug of wine, and 60\% continued to prefer "thou."
 
-	Assuming that this trend continues, the situation described in the preceding paragraph is a three-state Markov chain in which the slates are the three possible preferences. We can predict the percentage of Persians in each state for each month following the original survey. 
+    Assuming that this trend continues, the situation described in the preceding paragraph is a three-state Markov chain in which the slates are the three possible preferences. We can predict the percentage of Persians in each state for each month following the original survey.
 \end{displayquote}
 
 Letting the first, second, and third states be preferences for bread, wine, and "thou", respectively, we see that the probability vector that gives the initial probability of being in each state is
@@ -709,7 +780,7 @@ and the transition matrix is
 
 The probabilities of being in each state $m$ months after the original survey are the coordinates of the vector $A^mP$.
 
-For example, after $m = 1$ month we have 
+For example, after $m = 1$ month we have
 
 \begin{equation}
     AP = \begin{bmatrix}
@@ -723,10 +794,10 @@ which means there's a 30\% chance of a randomly selected person having a prefere
 
 We can similarly calculate for $m = 2, 3, 4, \ldots $
 
-Since A is regular, the long-range prediction concerning the Persians' preferences can be found by computing the fixed probability vector for $A$. 
+Since A is regular, the long-range prediction concerning the Persians' preferences can be found by computing the fixed probability vector for $A$.
 This vector is the unique probability vector $v$ such that $(A - I)v = 0$
 
-If we let 
+If we let
 \begin{equation}
     v = \begin{bmatrix}
            v_1 \\
@@ -747,7 +818,7 @@ we can solve the following system of linear equations
          \end{bmatrix}
 \end{equation}
 
- to get 
+ to get
 \begin{equation}
     \begin{bmatrix}
            5 \\
@@ -759,27 +830,27 @@ we can solve the following system of linear equations
 \end{equation}
 
 as a basis for the solution space of the system.
-Thus the unique fixed probability vector for $A$ is 
+Thus the unique fixed probability vector for $A$ is
 
 \[  \begin{bmatrix}
 \frac{5}{5 + 7 + 8} \\
 \frac{7}{5 + 7 + 8}\\
 \frac{8}{5 + 7 + 8}
-\end{bmatrix} 
+\end{bmatrix}
 %
 =
 \begin{bmatrix}{}
 0.25 \\
 0.35 \\
 0.4
-\end{bmatrix} 
+\end{bmatrix}
 \]
 
 Thus, in the long run. 25\% of the Persians prefer a loaf of bread, 35\% prefer a jug of wine, and 40\% prefer "thou beside me in the wilderness."
 
 We can computationally confirm this by finding $lim_{m \to \infty}A^m$.
 
-Let 
+Let
 
 \begin{equation}
     Q = \begin{bmatrix}
@@ -800,27 +871,27 @@ then
          \end{bmatrix}
 \end{equation}
 
-So 
+So
 
-\[  
+\[
 lim_{m \to \infty}A^m =
-lim_{m \to \infty}(QQ^{-1}AQQ^{-1})^m = 
+lim_{m \to \infty}(QQ^{-1}AQQ^{-1})^m =
 Q(lim_{m \to \infty}(Q^{-1}AQ)^m)Q^{-1} \]
 
 \[
-= Q \left[ lim_{m \to \infty} 
+= Q \left[ lim_{m \to \infty}
 \begin{bmatrix}
    1 & 0 & 0  \\
    0 & 0.5 & 0 \\
    0 & 0 & 0.2
  \end{bmatrix}^m \right] Q^{-1}
  =
-Q 
+Q
 \begin{bmatrix}
    1 & 0 & 0  \\
-   0 & 1 & 0 \\
-   0 & 0 & 1
- \end{bmatrix}^m Q^{-1}
+   0 & 0 & 0 \\
+   0 & 0 & 0
+ \end{bmatrix} Q^{-1}
  =
  \begin{bmatrix}{}
 0.25 & 0.25 & 0.25 \\
@@ -835,15 +906,15 @@ which is as expected.
 \bibliographystyle{alpha}
 
 \begin{thebibliography}{9}
- 
-\bibitem{friedberg2003linear} 
+
+\bibitem{friedberg2003linear}
 Friedberg, S.H. and Insel, A.J. and Spence, L.E.
 \textit{Linear Algebra}.
 Featured Titles for Linear Algebra (Advanced) Series.
 Pearson Education,
 2003.
 
-\bibitem{benspaper} 
+\bibitem{benspaper}
 Pioso, Ben.
 \textit{Matrix Limits, Including Jordan Canonical Form}.
 2017.
@@ -852,18 +923,3 @@ Pioso, Ben.
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
